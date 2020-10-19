@@ -11,20 +11,23 @@
         Authentification<br>
     </p>
     <form method="post" action="authentification.php">
-        <div name="saisie">
-            <p>
-                Identifiant:
-                <input type="text" name="identification"><br>
-            </p>
-            <p>
-                Mot de passe:
-                <input type="password" name="mdp"><br>
-            </p>
-        </div>
-        <div name="validation">
-            <input type="submit" name="valider" value="Se connecter">
+        <div name="authentification">
+            <table>
+                <tr>
+                    <td><input type="text" name="identifiant" placeholder="Identidiant"></td>
+                </tr>
+                <tr>
+                    <td><input type="password" name="motDePasse" placeholder="Mot de passe"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" name="valider" value="Se connecter"></td>
+                </tr>
+            </table>
         </div>
     </form>
+    <p>
+        Nouveau sur HK? <a href="creationCompte.html">Creer un compte</a>.
+    </p>
 </body>
 
 </html>

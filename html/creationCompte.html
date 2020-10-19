@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Creation de compte</title>
+</head>
+
+<body>
+    <p>
+        Creation d'un compte
+    </p>
+    <form method="post" action="creationCompte.php">
+        <table>
+            <tr>
+                <td><input type="text" name="nom" placeholder="Nom" size=10px></td>
+                <td><input type="text" name="prenom" placeholder="Prénom" size=10px></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="text" name="email" placeholder="Adresse e-mail" size=26px></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="text" name="confirmationEmail" placeholder="Confirmer l'adresse e-mail" size=26px></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="password" name="motDePasse" placeholder="Mot de passe" size=26px></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="password" name="confirmationMotDePasse" placeholder="Confirmer le mot de passe" size=26px></td>
+            </tr>
+        </table>
+        <input type="submit" name="valider" value="S'incrire">
+    </form>
+</body>
+
+</html>
