@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Creation de compte</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
@@ -11,7 +12,7 @@
         Creation d'un compte
     </p>
     <form method="post" action="creationCompte.php">
-        <table>
+        <table id="tableCreationCompte">
             <tr>
                 <td><input type="text" name="nom" placeholder="Nom" size=10px></td>
                 <td><input type="text" name="prenom" placeholder="Prénom" size=10px></td>
@@ -32,8 +33,10 @@
                 <td><input type="submit" name="valider" value="S'incrire"></td>
             </tr>
         </table>
-
     </form>
+    <p>
+        Déjà inscrit? <a href="authentification.html">S'identifier</a>.
+    </p>
 </body>
 
 </html>
