@@ -1,3 +1,54 @@
-#tableCreationCompte {
-    border: 3px solid purple;
+body{
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+}
+
+.divFlexCol{
+    display:flex;
+    flex-direction: column;
+}
+
+.divFlexRow{
+    display: flex;
+    flex-direction: row;
+}
+
+.divRowElt{
+    margin-right: 5px;
+}
+
+.divColElt{
+    margin-bottom: 5px;
+}
+
+.centre{
+    text-align: center;
+}
+
+.paddingTopAuth{
+    padding-top: 100px;
+}
+
+.blackBorder{
+    border: 1px solid black;
+}
+
+#divNomPrenom{
+    justify-content: center;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+#divAuth{
+    width: 270px;
+    margin: auto;
+}
+
+.bgLightPurple{
+    background-color:#e4cbff;
+}
+
+.bgWhite{
+    background-color: white;
 }
