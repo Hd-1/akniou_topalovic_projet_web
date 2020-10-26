@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>Authentification</title>
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../javascript/authentification.js" language="javascript" type="text/javascript"></script>
 </head>
 
 <body class="centre paddingTopAuth bgLightPurple">
@@ -12,7 +13,7 @@
         <p>
             Authentification<br>
         </p>
-        <form method="post" action="authentification.php">
+        <form method="post"  onsubmit="return Valider()">
         <div class="divFlexCol">
             <div class="divColElt">
                 <input type="text" name="email" placeholder="Identifiant">
@@ -26,7 +27,8 @@
         </div>
         </form>
         <p>
-            Nouveau sur HKNews? <a href="creationCompte.html">Creer un compte</a>.
+            Nouveau sur HKNews? <br>
+            <a href="creationCompte.html">Creer un compte</a>
         </p>
     </div>
 </body>
