@@ -5,7 +5,12 @@
     <meta charset="utf-8">
     <title>Authentification</title>
     <link rel="stylesheet" href="../css/style.css">
-    <script src="../javascript/authentification.js" language="javascript" type="text/javascript"></script>
+    <?php
+        include('../php/authentification.php');
+        if(isset($_POST['valider'])){
+            authentification($_POST['email'], $_POST['motDePasse']);
+        }
+    ?>
 </head>
 
 <body class="centre paddingTopAuth bgLightPurple">
@@ -13,7 +18,7 @@
         <p>
             Authentification<br>
         </p>
-        <form method="post"  onsubmit="return Valider()">
+        <form method="post">
         <div class="divFlexCol">
             <div class="divColElt">
                 <input type="text" name="email" placeholder="Identifiant">

@@ -1,7 +1,5 @@
 <?php
-
-use requetesSQL;
-use function requetesSQL\testAuthentification as testAuthentification;
+include('requetesSQL.php');
 
 class Authentification {
     private $email;
@@ -35,35 +33,28 @@ class Authentification {
     }
 
     function getMotDePasse() {
-        return $this->email;
+        return $this->motDePasse;
     }
 }
 
-function connexion($_POST){
+function authentification($email, $motDePasse){
     try{
-        $authentification = new Authentification($_POST['email'], $_POST['motDePasse']);
+        $authentification = new Authentification($email, $motDePasse);
         $test = testAuthentification($authentification);
-        if($test == false) {
-            throw new Error("Attention ! L'identifiant ou le mot de passe est incorrect");
+        if($test == true){
+            echo 
+            '<script language"javascript" type="text/javascript">
+                alert("Connexion établie !");
+            </script>';
         } else {
-            header("Location: redaction.html");
-            exit();
+            throw new Error("Attention ! L'adresse email ou le mot de passe est incorrect");
         }
-    } catch(Exception $e) {
+
+    } catch(Error $e) {
         echo 
             '<script language"javascript" type="text/javascript">
                 alert('.$e->getMessage().');
             </script>';
     }
 }
-
-function isEmpty($str){
-    $str = trim($str);
-    if($str == ""){
-        return true;
-    } else {
-        return false;
-    }
-}
-
 ?>
