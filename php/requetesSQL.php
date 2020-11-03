@@ -1,43 +1,31 @@
 <?php
     //PHP dédié aux requêtes SQL !
-    //Classe connexion pour passer par un objet PDO
-    class Connexion{
-        var $url;
-        var $identifiant;
-        var $motDePasse;
-
-        function __construct($url,$identifiant,$motDePasse){
-            $this->setUrl($url);
-            $this->setIdentifiant($identifiant);
-            $this->setMotDePasse($motDePasse);
-        }
-
-        function setUrl($url){
-            if(isEmpty($url)){
-                throw new Error("L'URL est vide");
-            } else {
-                $this->url = $url;
-            }
-        }
-
-        function setIdentifiant($identifiant){
-            if(isEmpty($identifiant)){
-                throw new Error("L'identifiant est vide");
-            } else {
-                $this->identifiant = $identifiant;
-            }
-        }
-
-        function setMotDePasse($motDePasse){
-            if(isEmpty($motDePasse)){
-                throw new Error("Le mot de passe est vide");
-            } else {
-                $this->motDePasse = $motDePasse;
-            }
+    //Fonction qui crée une connexion à la bdd
+    function creeConnexion(){
+        try{
+            $connexion = new PDO("jdbc:mysql://devbdd.iutmetz.univ-lorraine.fr", "topalovi1u_appli", "31900870");
+            return $connexion;
+        } catch(Exception $e) {
+            die($e->getMessage());
         }
     }
 
-    //Test si 
+    function testAuthentification($authentification){
+        try {
+            $requete = creeConnexion();
+            $resultat = $requete->query('SELECT * FROM topalovi1u_projetweb.Redacteur WHERE adresseemail='.$authentification->getEmail().' AND motdepasse='.$authentification->getMotDePasse());
+            if($resultat == null){
+                return false;
+            } else {
+                return true;
+            }
+        } catch(Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
+
+    //Test si une chaine est vide
     function isEmpty($str){
         $str = trim($str);
         if($str == ""){
