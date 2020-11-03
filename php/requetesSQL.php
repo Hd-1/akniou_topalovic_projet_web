@@ -13,7 +13,7 @@
         }
 
         function setUrl($url){
-            if(isEmpty(trim($url))){
+            if(isEmpty($url)){
                 throw new Error("L'URL est vide");
             } else {
                 $this->url = $url;
@@ -21,7 +21,7 @@
         }
 
         function setIdentifiant($identifiant){
-            if(isEmpty(trim($identifiant))){
+            if(isEmpty($identifiant)){
                 throw new Error("L'identifiant est vide");
             } else {
                 $this->identifiant = $identifiant;
@@ -29,7 +29,7 @@
         }
 
         function setMotDePasse($motDePasse){
-            if(isEmpty(trim($motDePasse))){
+            if(isEmpty($motDePasse)){
                 throw new Error("Le mot de passe est vide");
             } else {
                 $this->motDePasse = $motDePasse;
@@ -37,6 +37,7 @@
         }
     }
 
+    //Test si 
     function isEmpty($str){
         $str = trim($str);
         if($str == ""){
