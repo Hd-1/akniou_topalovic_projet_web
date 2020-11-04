@@ -33,7 +33,7 @@
         </form>
         <p>
             Nouveau sur HKNews? <br>
-            <a href="creationCompte.html">Creer un compte</a>
+            <a href="creationCompte.php">Creer un compte</a>
         </p>
     </div>
 </body>

@@ -57,4 +57,3 @@ function authentification($email, $motDePasse){
             </script>';
     }
 }
-?>

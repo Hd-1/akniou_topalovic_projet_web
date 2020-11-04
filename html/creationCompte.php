@@ -5,6 +5,12 @@
     <meta charset="utf-8">
     <title>Creation de compte</title>
     <link rel="stylesheet" href="../css/style.css">
+    <?php
+        include('../php/creationCompte.php');
+        if(isset($_POST['valider'])){
+            authentification($_POST['email'], $_POST['motDePasse']);
+        }
+    ?>
 </head>
 
 <body class="centre paddingTopAuth bgLightPurple">
@@ -36,7 +42,7 @@
         </div>
     </form>
     <p>
-        Déjà inscrit? <a href="authentification.html">S'identifier</a>.
+        Déjà inscrit? <a href="authentification.php">S'identifier</a>.
     </p>
 </div>
 </body>
