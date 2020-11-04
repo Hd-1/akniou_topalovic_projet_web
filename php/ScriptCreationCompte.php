@@ -58,9 +58,9 @@ class CreationCompte {
 
     function setEmail($email){
         try{
-            //Test si l'adresse email insérée est vide
+            //Test si l'adresse e-mail insérée est vide
             if(isEmpty($email)){
-                throw new Exception("Attention ! L'email est vide");
+                throw new Exception("Attention ! L'adresse e-mail est vide");
             } else {
                 $this->email = trim($email);
             }
@@ -113,6 +113,16 @@ function testEmail($email, $confirmationEmail){
     }
 }
 
+//confirmation de l'adresse e-mail
+function testCompteExistant($email){
+    if(!compteExistant($email)){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+//Confirmation du mot de passe
 function testMotDePasse($motDePasse, $confirmationMotDePasse){
     if(trim($motDePasse) == trim($confirmationMotDePasse)){
         return true;
@@ -127,14 +137,18 @@ function creationCompte($nom, $prenom, $email, $confirmationEmail, $motDePasse, 
         $testEmail = testEmail($email, $confirmationEmail);
         $testMotDePasse = testMotDePasse($motDePasse, $confirmationMotDePasse);
         if($testEmail == true && $testMotDePasse == true){
-            $compte = new CreationCompte(1, $nom, $prenom, $email, $motDePasse);
-            $test = insertCompte($compte);
-            if($test == true){
-                header("Location:http://localhost/projet/akniou_topalovic_projet_web/html/authentification.php");
-                exit();
+            if(testCompteExistant($email)){
+                $compte = new CreationCompte(1, $nom, $prenom, $email, $motDePasse);
+                $test = insertCompte($compte);
+                if($test == true){
+                    header("Location:http://localhost/projet/akniou_topalovic_projet_web/html/authentification.php");
+                    exit();
+                }
+            } else {
+                throw new Exception("Un compte est déjà associé à cette adresse e-mail !");
             }
         } else {
-            throw new Exception("L'adresse email ou le mot de passe ne sont pas identique");
+            throw new Exception("L'adresse e-mail ou le mot de passe ne sont pas identique");
         }
     } catch(Exception $e) {
         echo '<script type="text/javascript"> alert("'.$e->getMessage().'");</script>';

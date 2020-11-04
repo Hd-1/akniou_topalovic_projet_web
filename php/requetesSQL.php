@@ -32,6 +32,22 @@
         }
     }
 
+    //Test si un comtpe est deja existant
+    function compteExistant($email){
+        $pdo = creeConnexion();
+        $statement = $pdo->prepare("SELECT COUNT(*) AS nbLigne FROM Redacteur WHERE adressemail=?;");
+        $statement->execute([$email]);
+        $nbLigne = 0;
+        while($row = $statement->fetch(PDO::FETCH_ASSOC)){
+            $nbLigne = $row['nbLigne'];
+        }
+        if($nbLigne == 0){
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     //Insertion d'un nouveau redacteur dans la base de données
     function insertCompte($compte){
         $pdo = creeConnexion();

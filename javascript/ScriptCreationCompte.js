@@ -1,6 +1,6 @@
 function Valider(){
-    var regexNom = /^[a-z]+[\-']?[[a-z]+[\-']?]*[a-z]+$/;
-    var regexPrenom = /^[a-z]+[\-']?[[a-z]+[\-']?]*[a-z]+$/;
+    var regexNom = /^[a-zA-Z]+[\-']?[[a-zA-Z]+[\-']?]*[a-zA-Z]+$/;
+    var regexPrenom = /^[a-zA-Z]+[\-']?[[a-zA-Z]+[\-']?]*[a-zA-Z]+$/;
     var regexEmail = /^\w+[\+\.\w-]*@([\w-]+\.)*\w+[\w-]*\.([a-z]{2,4}|\d+)$/i;
     var regexMotDePasse= /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/;
     if(!regexNom.test(nom.value)){
