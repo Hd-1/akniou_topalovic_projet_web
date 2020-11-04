@@ -18,7 +18,7 @@
     <nav>
         <ul id="menu">
             <li>
-                <a href="accueil" class="souligne elmtMenu" >Accueil</a>
+                <a href="accueil.php" class="souligne elmtMenu" >Accueil</a>
             </li>
 
             <li>
