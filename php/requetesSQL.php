@@ -1,6 +1,6 @@
 <?php
     //PHP dédié aux requêtes SQL !
-    //Fonction qui crée une connexion à la bdd
+    //Fonction qui crée une connexion à la bdd grace à PDO pour prévenir des SQL Injections 
     function creeConnexion(){
         try{
             $pdo = new PDO('mysql:host=devbdd.iutmetz.univ-lorraine.fr;port=3306;dbname=topalovi1u_projetweb', 'topalovi1u_appli', '31906060');
