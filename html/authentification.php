@@ -31,7 +31,8 @@
             </div>
         </div>
         </form>
-        <p>
+        <p id='erreur' class='policeRouge'></p>
+        <p id="pCreationCompte">
             Nouveau sur HKNews? <br>
             <a href="creationCompte.php">Creer un compte</a>
         </p>
