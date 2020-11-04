@@ -19,7 +19,32 @@
         }
     ?>
 </head>
+<header>
+        <h1 id="titre">HK News</h1>
+		<nav>
+			<ul id="menu">
+				<li>
+                    <a href="###" class="souligne elmtMenu" id="pageActuelle">Accueil</a>
+                </li>
 
+				<li>
+                    <a href="###" class="souligne elmtMenu">News</a>
+                </li>
+
+				<li>
+                    <a href="../html/redaction.html" class="souligne elmtMenu">rédiger une news</a>
+                </li>
+
+                <li>
+                    <a href="###" class="souligne elmtMenu">contacts</a>
+                </li>
+
+                <li>
+                    <a href="###" class="souligne elmtMenu">connexion</a>
+                </li>
+			</ul>
+		</nav>
+    </header>
 <body class="centre paddingTopAuth bgLightPurple">
     <div class="blackBorder bgWhite" id="divAuth">
     <p>
