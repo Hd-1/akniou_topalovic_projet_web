@@ -1,52 +1,152 @@
+/*==========================================================================
+                                    	HEADER
+==========================================================================*/
+
+header{
+    text-align: center;
+	margin:0;
+	padding:0;
+	background-color:white;
+	font-variant: small-caps;
+}
+
+header a{
+	text-decoration:none;
+	color:black;
+}
+
+#titre{
+	text-transform:uppercase;
+	font-size:30px;
+	font-weight:bold;
+}
+
+/*==========================================================================
+                                    	MENU
+==========================================================================*/
+
+#menu{
+    border: 2px solid black;    
+}
+
+#menu a { 
+	display:inline-block;
+}
+
+#menu li ul{
+	border-bottom:1px solid black;
+	border-left:1px solid black;
+	border-right:1px solid black;
+}
+
+#menu > li{
+	position: relative;
+	display:inline-block;
+	padding: 5px 15px;
+}
+
+#menu ul {
+	position: absolute;
+	top: 2em;
+	left: 0;
+	max-height:0em; 
+	margin:16px 0 0 15px;
+	background-color: white;
+	overflow: hidden;
+	transition: max-height 0.5s;
+	list-style-type: none;
+}
+
+#menu > li:hover ul{
+	max-height: 13em;
+}
+
+
+.elmtMenu{
+    padding-top: 2%;
+	padding-bottom: 2%;
+	padding-left: 5;
+    font-size:20px;
+}
+
+.souligne{
+	display: inline-block;
+	position: relative;
+}
+
+.souligne::before{
+	content: '';
+	position: absolute;
+	width: 100%;
+	transform: scaleX(0);
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	background-color: black;
+	transform-origin: bottom left;
+	transition: transform 0.25s ease-out;
+}
+
+.souligne:hover::before{
+	transform: scaleX(1);
+}
+
+
+/*==========================================================================
+                                    	BODY
+==========================================================================*/
 body{
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+	margin: 0;
+	padding: 0;
+	width: 100%;
 }
 
 .divFlexCol{
-    display:flex;
-    flex-direction: column;
+	display:flex;
+	flex-direction: column;
 }
 
 .divFlexRow{
-    display: flex;
-    flex-direction: row;
+	display: flex;
+	flex-direction: row;
 }
 
 .divRowElt{
-    margin-right: 5px;
+	margin-right: 5px;
 }
 
 .divColElt{
-    margin-bottom: 5px;
+	margin-bottom: 5px;
 }
 
 .centre{
-    text-align: center;
+	text-align: center;
 }
 
 .paddingTopAuth{
-    padding-top: 100px;
+	padding-top: 100px;
 }
 
 .blackBorder{
-    border: 1px solid black;
+	border: 1px solid black;
 }
 
 #divNomPrenom{
-    justify-content: center;
+	justify-content: center;
 }
 
 *{
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 #divAuth{
-    width: 270px;
-    margin: auto;
+	width: 270px;
+	margin: auto;
 }
 
 .bgLightPurple{
-    background-color:#e4cbff;
+	background-color:#e4cbff;
 }
 
 .bgWhite{

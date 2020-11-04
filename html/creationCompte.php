@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Creation de compte</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
     <?php
         include('../php/creationCompte.php');
         if(isset($_POST['valider'])){
