@@ -1,6 +1,8 @@
-/*==========================================================================
-                                    	HEADER
-==========================================================================*/
+/*########################################################################
+==========================================================================
+                            		HEADER
+==========================================================================
+##########################################################################*/
 
 header{
     text-align: center;
@@ -21,12 +23,14 @@ header a{
 	font-weight:bold;
 }
 
-/*==========================================================================
-                                    	MENU
-==========================================================================*/
+/*===========================================================
+                        	  	MENU
+=============================================================*/
 
 #menu{
-    border: 2px solid black;    
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	margin: 0;    
 }
 
 #menu a { 
@@ -48,7 +52,6 @@ header a{
 #menu ul {
 	position: absolute;
 	top: 2em;
-	left: 0;
 	max-height:0em; 
 	margin:16px 0 0 15px;
 	background-color: white;
@@ -62,7 +65,7 @@ header a{
 }
 
 .elmtMenu{
-	padding: 2% 50px 2% 50px;
+	margin: 2% 50px 2% 50px;
     font-size:20px;
 }
 
@@ -88,10 +91,15 @@ header a{
 	transform: scaleX(1);
 }
 
+#pageActuelle{
+	color:orange;
+}
 
-/*==========================================================================
+/*########################################################################
+==========================================================================
                                     	BODY
-==========================================================================*/
+==========================================================================
+########################################################################*/
 
 body{
 	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
@@ -100,6 +108,13 @@ body{
 	width: 100%;
 }
 
+*{
+	box-sizing: border-box;
+}
+
+/*===========================================================
+                    		FLEX BOX
+===========================================================*/
 .divFlexCol{
 	display:flex;
 	flex-direction: column;
@@ -117,30 +132,79 @@ body{
 .divColElt{
 	margin-bottom: 5px;
 }
-
-.centre{
-	text-align: center;
+/*===========================================================
+                        	Section & Article
+===========================================================*/
+#sectionArticle{
+	background-color: gray;
+	margin: 0;
 }
+
+.articleNews h1{
+	background-color: #e4cbff;
+	margin: 0;
+	font-size: 28px;
+}
+
+.articleNews h2{
+	background-color: #e4cbff;
+	margin: 0;
+	text-align: right;
+	font-size: 16px;
+}
+
+.articleNews{
+	background-color: bisque;
+	max-width: 35%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.articleNews a{
+	text-decoration: none;
+	color: red;
+	font-size: 16px;
+	margin-left: 75%;
+}
+
+#articleIntro{
+	background-color: bisque;
+	margin: 0;
+}
+
+#articleIntro p{
+	margin: 0;
+}
+
+.imgintro{
+	size:500px;
+}
+
+/*===========================================================
+                        Authentification
+===========================================================*/
 
 .paddingTopAuth{
 	padding-top: 100px;
 }
 
-.blackBorder{
-	border: 1px solid black;
-}
 
 #divNomPrenom{
 	justify-content: center;
 }
 
-*{
-	box-sizing: border-box;
-}
-
 #divAuth{
 	width: 270px;
 	margin: auto;
+}
+/*########################################################################
+==========================================================================
+                            	GENERAL
+==========================================================================
+########################################################################*/
+
+.policeRouge{
+    color: red;
 }
 
 .bgLightPurple{
@@ -151,6 +215,7 @@ body{
     background-color: white;
 }
 
-.policeRouge{
-    color: red;
+.centre{
+	text-align: center;
 }
+
