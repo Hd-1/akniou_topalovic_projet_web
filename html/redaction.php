@@ -34,7 +34,7 @@
             </li>
 
             <li>
-                <a href="authentificaiton.php" class="souligne elmtMenu">connexion</a>
+                <a href="authentification.php" class="souligne elmtMenu">connexion</a>
             </li>
         </ul>
     </nav>
