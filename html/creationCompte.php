@@ -24,7 +24,7 @@
 		<nav>
 			<ul id="menu">
 				<li>
-                    <a href="###" class="souligne elmtMenu" id="pageActuelle">Accueil</a>
+                    <a href="accueil.php" class="souligne elmtMenu" >Accueil</a>
                 </li>
 
 				<li>
@@ -32,7 +32,7 @@
                 </li>
 
 				<li>
-                    <a href="../html/redaction.html" class="souligne elmtMenu">rédiger une news</a>
+                    <a href="redaction.php" class="souligne elmtMenu">rédiger une news</a>
                 </li>
 
                 <li>
@@ -40,7 +40,7 @@
                 </li>
 
                 <li>
-                    <a href="###" class="souligne elmtMenu">connexion</a>
+                    <a href="authentification.php" class="souligne elmtMenu" id="pageActuelle">connexion</a>
                 </li>
 			</ul>
 		</nav>

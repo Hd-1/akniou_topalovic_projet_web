@@ -18,7 +18,7 @@
     <nav>
         <ul id="menu">
             <li>
-                <a href="###" class="souligne elmtMenu" id="pageActuelle">Accueil</a>
+                <a href="###" class="souligne elmtMenu" >Accueil</a>
             </li>
 
             <li>
@@ -26,7 +26,7 @@
             </li>
 
             <li>
-                <a href="../html/redaction.html" class="souligne elmtMenu">rédiger une news</a>
+                <a href="../html/redaction.html" class="souligne elmtMenu" id="pageActuelle">rédiger une news</a>
             </li>
 
             <li>
