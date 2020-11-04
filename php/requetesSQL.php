@@ -10,6 +10,7 @@
         }
     }
 
+    //Verifie si les identifiants inséré sont dans la bdd pour authentifier le redacteur
     function testAuthentification($authentification){
         try {
             $statement = creeConnexion();
@@ -27,6 +28,19 @@
         } catch(Exception $e) {
             die($e->getMessage());
         }
+    }
+
+    //Insertion d'un nouveau redacteur dans la base de données
+    function insertCompte($compte){
+        $statement = creeConnexion();
+        $requete = "INSERT INTO 'topalovi1u_projetweb'.'Redacteur' ('nom', 'prenom', 'adressemail', 'motdepasse') VALUES (?, ?, ?, ?);";
+        $preparedStatement = $statement->prepare($requete);
+            $preparedStatement->bindValue(1, $compte->getNom());
+            $preparedStatement->bindValue(2, $compte->getPrenom());
+            $preparedStatement->bindValue(3, $compte->getEmail());
+            $preparedStatement->bindValue(4, $compte->getMotDePasse());
+        $resultat = $preparedStatement->execute();
+        return $resultat;
     }
 
     //Test si une chaine est vide

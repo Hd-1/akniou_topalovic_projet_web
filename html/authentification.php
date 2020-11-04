@@ -6,7 +6,7 @@
     <title>Authentification</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <?php
-        include('../php/authentification.php');
+        include('../php/ScriptAuthentification.php');
         if(isset($_POST['valider'])){
             authentification($_POST['email'], $_POST['motDePasse']);
         }
@@ -31,8 +31,7 @@
             </div>
         </div>
         </form>
-        <p id='erreur' class='policeRouge'></p>
-        <p id="pCreationCompte">
+        <p>
             Nouveau sur HKNews? <br>
             <a href="creationCompte.php">Creer un compte</a>
         </p>

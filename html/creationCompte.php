@@ -6,7 +6,7 @@
     <title>Creation de compte</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <?php
-        include('../php/creationCompte.php');
+        include('../php/ScriptCreationCompte.php');
         if(isset($_POST['valider'])){
             authentification($_POST['email'], $_POST['motDePasse']);
         }
