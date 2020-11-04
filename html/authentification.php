@@ -43,9 +43,9 @@
 			</ul>
 		</nav>
     </header>
-<body class="centre paddingTopAuth bgLightPurple">
+<body class="centre bgLightPurple">
     <div><img src='images/logo2.png' width="150" height="150"></div>
-    <div class="blackBorder bgWhite" id="divAuth">
+    <div class="blackBorder paddingTopAuthbgWhite" id="divAuth">
         <p>
             Authentification<br>
         </p>
