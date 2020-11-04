@@ -8,7 +8,13 @@
     <?php
         include('../php/ScriptCreationCompte.php');
         if(isset($_POST['valider'])){
-            authentification($_POST['email'], $_POST['motDePasse']);
+            $nom = $_POST['nom'];
+            $prenom = $_POST['prenom'];
+            $email = $_POST['email'];
+            $confirmationEmail = $_POST['confirmationEmail'];
+            $motDePasse = $_POST['motDePasse'];
+            $confirmationMotDePasse = $_POST['confirmationMotDePasse'];
+            creationCompte($nom, $prenom, $email, $confirmationEmail, $motDePasse, $confirmationMotDePasse);
         }
     ?>
 </head>
@@ -18,7 +24,7 @@
     <p>
         Creation d'un compte
     </p>
-    <form method="post" action="../php/nouveauCompte.php">
+    <form method="post" autocomplete="off">
         <div class="divFlexCol">
             <div class="divFlexRow divColElt" id="divNomPrenom">
                 <div class="divRowElt"><input type="text" name="nom" placeholder="Nom" size=10px></div>

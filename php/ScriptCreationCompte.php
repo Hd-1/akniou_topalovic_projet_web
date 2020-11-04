@@ -36,7 +36,7 @@ class CreationCompte {
             if(isEmpty($nom)){
                 throw new Exception("Attention ! Le nom est vide");
             } else {
-                $this->email = trim($nom);
+                $this->nom = trim($nom);
             }
         } catch(Exception $e) {
             echo '<script type="text/javascript"> alert("'.$e->getMessage().'");</script>';
@@ -49,7 +49,7 @@ class CreationCompte {
             if(isEmpty($prenom)){
                 throw new Exception("Attention ! Le prenom est vide");
             } else {
-                $this->email = trim($prenom);
+                $this->prenom = trim($prenom);
             }
         } catch(Exception $e) {
             echo '<script type="text/javascript"> alert("'.$e->getMessage().'");</script>';
@@ -105,17 +105,38 @@ class CreationCompte {
     }
 }
 
-function creationCompte($nom, $prenom, $email, $motDePasse){
+function testEmail($email, $confirmationEmail){
+    if(trim($email) == trim($confirmationEmail)){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function testMotDePasse($motDePasse, $confirmationMotDePasse){
+    if(trim($motDePasse) == trim($confirmationMotDePasse)){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function creationCompte($nom, $prenom, $email, $confirmationEmail, $motDePasse, $confirmationMotDePasse){
+    //Création d'un objet CreationCompte pour effectuer la verification des champs dans le php
     try{
-        //Création d'un objet CreationCompte pour effectuer la verification des champs dans le php
-        $compte = new CreationCompte(1, $nom, $prenom, $email, $motDePasse);
-        $test = insertCompte($compte);
-
-        if($test == true){
-            header("Location:http://localhost/projet/akniou_topalovic_projet_web/html/authentification.php");
-            exit();
+        $testEmail = testEmail($email, $confirmationEmail);
+        $testMotDePasse = testMotDePasse($motDePasse, $confirmationMotDePasse);
+        if($testEmail == true && $testMotDePasse == true){
+            $compte = new CreationCompte(1, $nom, $prenom, $email, $motDePasse);
+            $test = insertCompte($compte);
+            if($test == true){
+                header("Location:http://localhost/projet/akniou_topalovic_projet_web/html/authentification.php");
+                exit();
+            }
+        } else {
+            throw new Exception("L'adresse email ou le mot de passe ne sont pas identique");
         }
-    } catch(Error $e) {
-
+    } catch(Exception $e) {
+        echo '<script type="text/javascript"> alert("'.$e->getMessage().'");</script>';
     }
 }

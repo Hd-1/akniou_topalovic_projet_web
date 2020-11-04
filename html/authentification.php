@@ -8,7 +8,9 @@
     <?php
         include('../php/ScriptAuthentification.php');
         if(isset($_POST['valider'])){
-            authentification($_POST['email'], $_POST['motDePasse']);
+            $email = $_POST['email'];
+            $motDePasse = $_POST['motDePasse'];
+            authentification($email, $motDePasse);
         }
     ?>
 </head>
