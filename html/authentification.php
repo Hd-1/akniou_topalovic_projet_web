@@ -16,6 +16,7 @@
 </head>
 
 <body class="centre paddingTopAuth bgLightPurple">
+    <div><img src='images/logo2.png' width="150" height="150"></div>
     <div class="blackBorder bgWhite" id="divAuth">
         <p>
             Authentification<br>
