@@ -5,6 +5,9 @@
     <meta charset="utf-8">
     <title>Authentification</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script type="text/javascript" src="../javascript/ScriptAuthentification.js">
+
+    </script>
     <?php
         include('../php/ScriptAuthentification.php');
         if(isset($_POST['valider'])){
@@ -30,7 +33,7 @@
                 <input type="password" name="motDePasse" placeholder="Mot de passe">
             </div>
             <div class="divColElt">
-                <input type="submit" name="valider" value="Se connecter">
+                <input type="submit" name="valider" value="Se connecter" onsubmit="return valider()">
             </div>
         </div>
         </form>
