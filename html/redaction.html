@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Redaction</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <?php
+        include('../php/redaction.php');
+        if(isset($_POST['valider'])){
+            authentification($_POST['email'], $_POST['motDePasse']);
+        }
+    ?>
+</head>
+
+<body>
+    <div class="blackBorder bgWhite" id="divAuth">
+    <p>
+        Redaction
+    </p>
+    <form method="post" action="../php/redaction.php">
+        <div class="divFlexCol">
+            <div class="divFlexRow divColElt" id="divNomPrenom">
+                <div class="divRowElt"><input type="text" name="titre" placeholder="Titre" size=50px>
+                    <textarea name ="commentaire" id="commentaire" rows="10" cols="80" placeholder="saisir vos commentaires et remarques ici"></textarea><br/>
+                </div>
+            </div>
+                <td><input type="submit" name="valider" value="Terminer" ></td>
+            <div>
+        </div>
+    </form>
+</div>
+</body>
+
+</html>
