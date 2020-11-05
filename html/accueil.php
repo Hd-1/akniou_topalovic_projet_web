@@ -24,10 +24,10 @@
 <section id="sectionArticle">
     <article id="articleIntro">
         <p>Ceci est l'intro</p>
-        <img id="image0" src="../images/0.png" />
-        <img id="image1" src="../images/1.png" />
-        <img id="image2" src="../images/2.png" />
-        <img id="image3" src="../images/3.png" />
+        <img id="image0" src="./images/0.png" />
+        <img id="image1" src="./images/1.png" />
+        <img id="image2" src="./images/2.png" />
+        <img id="image3" src="./images/3.png" />
     </article>
     <article class="articleNews">
         <h1>Ceci est le titre de l'article</h1>
