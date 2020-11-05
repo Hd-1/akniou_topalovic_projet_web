@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <title>Redaction</title>
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/calendrier.css">
   <!--  <?php
         include('../php/redaction.php');
         if(isset($_POST['valider'])){
             authentification($_POST['email'], $_POST['motDePasse']);
-        }
     ?>-->
-    <script type="text/javascript" src="../javascript/ScriptRedaction.js"></script>
+    <script type="text/javascript" src="../javascript/ScriptRecherche.js"></script>
+    <script type="text/javascript" src="../javascript/ScriptCalendrier.js"></script>
 </head>
 <header>
     <h1 id="titre">HK News</h1>
@@ -29,9 +28,15 @@
     <div class="divFlexCol recherche">
         <div class="divFlexRow divColElt" id="divNomPrenom">
             <div class="divRowElt">
-                <img src="images" src="./images/calendrier.png" alt="calendrier">
-                <input type="text" name="titre" placeholder="Recherche" size=46px>
-                <select name="theme" id="themeChoisi">
+
+
+                <p>Date : <input type="text" value="" name="date2" id="champ_date2" size="12" maxlength="10"></p>
+                <div id="calendarMain2"></div>
+                <script type="text/javascript">
+                calInit("calendarMain2", "Calendrier", "champ_date2", "jsCalendar", "day", "selectedDay");
+                </script>
+
+               <select name="theme" id="themeChoisi">
                     <option value="">--Choisir un thème--</option>
                 </select>
              </div>
