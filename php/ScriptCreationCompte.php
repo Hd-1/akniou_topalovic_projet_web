@@ -19,7 +19,7 @@ class CreationCompte {
     //Setters des attributs de CreationCompte
     function setIdredacteur($idredacteur){
         try{
-            //Test si l'ID' inséré est vide
+            //Test si l'ID inséré est vide
             if(isEmpty($idredacteur)){
                 throw new Exception("l'ID est vide");
             } else {

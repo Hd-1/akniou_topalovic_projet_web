@@ -20,32 +20,32 @@
     ?>
 </head>
 <header>
-        <h1 id="titre">HK News</h1>
-		<nav>
-			<ul id="menu">
-				<li>
-                    <a href="accueil.php" class="souligne elmtMenu" >Accueil</a>
-                </li>
+    <h1 id="titre">HK News</h1>
+    <nav>
+        <ul id="menu">
+            <li>
+                <a href="accueil.php" class="souligne elmtMenu" >Accueil</a>
+            </li>
 
-				<li>
-                    <a href="###" class="souligne elmtMenu">News</a>
-                </li>
+            <li>
+                <a href="###" class="souligne elmtMenu">News</a>
+            </li>
 
-				<li>
-                    <a href="redaction.php" class="souligne elmtMenu">rédiger une news</a>
-                </li>
+            <li>
+                <a href="redaction.php" class="souligne elmtMenu">rédiger une news</a>
+            </li>
 
-                <li>
-                    <a href="###" class="souligne elmtMenu">contacts</a>
-                </li>
+            <li>
+                <a href="###" class="souligne elmtMenu">contacts</a>
+            </li>
 
-                <li>
-                    <a href="authentification.php" class="souligne elmtMenu" id="pageActuelle">connexion</a>
-                </li>
-			</ul>
-		</nav>
-    </header>
-<body class="centre paddingTopAuth bgLightPurple">
+            <li>
+                <a href="authentification.php" class="souligne elmtMenu" id="pageActuelle">connexion</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<body class="centre bgLightPurple">
     <div class="blackBorder bgWhite" id="divAuth">
     <p>
         Creation d'un compte

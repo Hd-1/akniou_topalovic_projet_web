@@ -59,6 +59,18 @@
         return $statement->execute([$nom,$prenom,$email,$motDePasse]);
     }
 
+    //Insertion d'une news dans la base de données
+    function insertNews($news){
+        $pdo = creeConnexion();
+        $idtheme = $news->getIdtheme();
+        $titrenews = $news->getTitrenews();
+        $datenews = $news->getDatenews();
+        $textenews = $news->getTextenews();
+        $idredacteur = $news->getIdredacteur();
+        $statement = $pdo->prepare("INSERT INTO News (idtheme, titrenews, datenews, textenews, idredacteur) VALUES(?,?,?,?,?);");
+        return $statement->execute([$idtheme, $titrenews, $datenews, $textenews, $idredacteur]);
+    }
+
     //Test si une chaine est vide
     function isEmpty($str){
         $str = trim($str);
