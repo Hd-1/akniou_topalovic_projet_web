@@ -18,7 +18,7 @@ function calInit(divId, btName, fieldId, classTable, classDay, classSel){
 	obj.classTable = classTable;
 	obj.classTd = classDay;
 	obj.classSelection = classSel;
-	// sauvegarde l'objet, le champ de texte rattache et l'id envoye Ã  jsSimpleDatePickr
+	// sauvegarde l'objet, le champ de texte rattache et l'id envoye a  jsSimpleDatePickr
 	jsSDPObj[jsSDPId] = [obj, fieldId, 'calendar'+jsSDPId];
 	jsSDPId++;
 	return 1;
@@ -69,7 +69,7 @@ function calYearNav(id, val){
 	calShowTitle(id);
 }
 //
-// callback : gÃ¨re une clic sur une date
+// callback : gere un clic sur une date
 //
 function calClick(dateStr, id){
 	// cherche l'objet

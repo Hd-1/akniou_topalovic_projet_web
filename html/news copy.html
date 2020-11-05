@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Redaction</title>
-    <link rel="stylesheet" type="text/css" href="../css/calendrier.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
   <!--  <?php
         include('../php/redaction.php');
         if(isset($_POST['valider'])){
@@ -28,14 +28,14 @@
     <div class="divFlexCol recherche">
         <div class="divFlexRow divColElt" id="divNomPrenom">
             <div class="divRowElt">
-
-
-                <p>Date : <input type="text" value="" name="date2" id="champ_date2" size="12" maxlength="10"></p>
-                <div id="calendarMain2"></div>
+                <input type="text" name="recherche" placeholder="Recherche..." id="recherche" size="45" >
+                <br/>
+                <input type="text" placeholder="Date" value="" name="date" id="champ_date" size="12" maxlength="10">
+                <span id="calendarMain"></span>
                 <script type="text/javascript">
-                calInit("calendarMain2", "Calendrier", "champ_date2", "jsCalendar", "day", "selectedDay");
+                calInit("calendarMain", "Calendrier", "champ_date", "jsCalendar", "day", "selectedDay");
                 </script>
-
+                <br/>
                <select name="theme" id="themeChoisi">
                     <option value="">--Choisir un thème--</option>
                 </select>
