@@ -33,9 +33,8 @@
                 <div class="divRowElt">
                     <input type="text" name="titre" placeholder="Titre" size=50px maxlength="300" onkeyup="resteTitre(this.value);"><br/>
                     <span id="caracteresTitre">300</span> caractères restants
-
-                  <textarea rows="10" cols="70" placeholder="Ecrire l'article..." maxlength="5000" onkeyup="resteRedaction(this.value);"></textarea><br/>
-                        <span id="caracteresRedaction">5000</span> caractères restants
+                    <textarea rows="10" cols="70" placeholder="Ecrire l'article..." maxlength="5000" onkeyup="resteRedaction(this.value);"></textarea><br/>
+                    <span id="caracteresRedaction">5000</span> caractères restants
                 </div>
             </div>
                 <td><input type="submit" name="valider" value="Terminer" ></td>
