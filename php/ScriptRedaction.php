@@ -1,6 +1,7 @@
 <?php
 
-include('requetesSQL.php');
+include_once('requetesSQL.php');
+include_once("ScriptTheme.php");
 
 class News{
 
@@ -148,6 +149,15 @@ function testBoutonDeco() {
         echo '<li><a href="authentification.php" class="souligne elmtMenu">Deconnexion</a></li>';
     } else {
         echo '<li><a href="authentification.php" class="souligne elmtMenu">Connexion</a></li>';
+    }
+}
+
+function affichageTheme(){
+    $table = getTheme();
+    foreach($table as $theme){
+        $idtheme = $theme->getIdtheme();
+        $description = $theme->getDescription();
+        echo "<option value='".$idtheme."'>".$description."</option>";
     }
 }
 ?>

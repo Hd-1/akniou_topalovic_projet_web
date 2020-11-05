@@ -1,6 +1,8 @@
 <?php
     //PHP dédié aux requêtes SQL !
     //Fonction qui crée une connexion à la bdd grace à PDO pour prévenir des SQL Injections 
+    include_once("ScriptTheme.php");
+
     function creeConnexion(){
         try{
             $pdo = new PDO('mysql:host=devbdd.iutmetz.univ-lorraine.fr;port=3306;dbname=topalovi1u_projetweb', 'topalovi1u_appli', '31906060');
@@ -81,6 +83,20 @@
         return $id;
     }
 
+    //Recupere tous les themes
+    function getTheme(){ 
+        $pdo = creeConnexion();
+        $statement = $pdo->prepare("SELECT * FROM Theme;");
+        $statement->execute();
+        while($row = $statement->fetch(PDO::FETCH_ASSOC)){
+            $idtheme = $row['idtheme'];
+            $description = $row['description'];
+            $theme = new Theme($idtheme, $description);
+            $table[] = $theme;
+        }
+        
+        return $table;
+    }
 
     //Test si une chaine est vide
     function isEmpty($str){
