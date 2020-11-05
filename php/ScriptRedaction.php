@@ -124,10 +124,10 @@ class News{
     }
 }
 
-function creeNews($idnews,$idtheme, $titrenews, $datenews, $textenews, $idredacteur){
+function creeNews($idtheme, $titrenews, $datenews, $textenews){
     try{
-        $news = new News($idnews,$idtheme, $titrenews, $datenews, $textenews, $idredacteur);
-
+        $idredacteur = getIdRedacteurByEmail($_SESSION['login']);
+        $news = new News(1,$idtheme, $titrenews, $datenews, $textenews, $idredacteur);
         insertNews($news);
     } catch(Exception $e) {
 

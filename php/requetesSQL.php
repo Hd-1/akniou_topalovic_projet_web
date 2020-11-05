@@ -71,6 +71,17 @@
         return $statement->execute([$idtheme, $titrenews, $datenews, $textenews, $idredacteur]);
     }
 
+    //Recupere l'id d'un redacteur grace a son email
+    function getIdRedacteurByEmail($email){
+        $pdo = creeConnexion();
+        $statement = $pdo->prepare("SELECT idredacteur FROM Redacteur WHERE adressemail=?;");
+        while($row = $statement->fetch(PDO::FETCH_ASSOC)){
+            $id = $row['idredacteur'];
+        }
+        return $id;
+    }
+
+
     //Test si une chaine est vide
     function isEmpty($str){
         $str = trim($str);
