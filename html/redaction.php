@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <title>Redaction</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
   <!--  <?php
-        include('../php/redaction.php');
+        include('../php/ScriptRedaction.php');
+        testSession();
         if(isset($_POST['valider'])){
             authentification($_POST['email'], $_POST['motDePasse']);
         }
@@ -26,15 +26,15 @@
             </li>
 
             <li>
-                <a href="redaction.php" class="souligne elmtMenu" id="pageActuelle">rédiger une news</a>
+                <a href="redaction.php" class="souligne elmtMenu" id="pageActuelle">Rédiger une news</a>
             </li>
 
             <li>
-                <a href="###" class="souligne elmtMenu">contacts</a>
+                <a href="###" class="souligne elmtMenu">Contacts</a>
             </li>
 
             <li>
-                <a href="authentification.php" class="souligne elmtMenu">connexion</a>
+                <a href="authentification.php" class="souligne elmtMenu">Connexion</a>
             </li>
         </ul>
     </nav>

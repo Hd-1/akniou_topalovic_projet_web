@@ -8,6 +8,7 @@
     <script language="javascript" type="text/javascript" src="../javascript/ScriptCreationCompte.js"></script>
     <?php
         include('../php/ScriptCreationCompte.php');
+        testSession();
         if(isset($_POST['valider'])){
             $nom = $_POST['nom'];
             $prenom = $_POST['prenom'];
@@ -32,20 +33,20 @@
             </li>
 
             <li>
-                <a href="redaction.php" class="souligne elmtMenu">rédiger une news</a>
+                <a href="redaction.php" class="souligne elmtMenu">Rédiger une news</a>
             </li>
 
             <li>
-                <a href="###" class="souligne elmtMenu">contacts</a>
+                <a href="###" class="souligne elmtMenu">Contacts</a>
             </li>
 
             <li>
-                <a href="authentification.php" class="souligne elmtMenu" id="pageActuelle">connexion</a>
+                <a href="authentification.php" class="souligne elmtMenu" id="pageActuelle">Connexion</a>
             </li>
         </ul>
     </nav>
 </header>
-<body class="centre bgLightPurple">
+<body class="centre">
     <div class="blackBorder bgWhite" id="divAuth">
     <p>
         Creation d'un compte

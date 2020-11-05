@@ -133,4 +133,12 @@ function creeNews($idnews,$idtheme, $titrenews, $datenews, $textenews, $idredact
 
     }
 }
+//A faire 
+function testSession() {
+    session_start();
+    if (!isset($_SESSION['login']) && !isset($_SESSION['pass'])){
+        header("Location:http://localhost/projet/akniou_topalovic_projet_web/html/authentification.php") ;
+    }
+}
+
 ?>

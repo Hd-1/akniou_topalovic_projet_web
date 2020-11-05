@@ -154,3 +154,13 @@ function creationCompte($nom, $prenom, $email, $confirmationEmail, $motDePasse, 
         echo '<script type="text/javascript"> alert("'.$e->getMessage().'");</script>';
     }
 }
+
+//A faire
+function testSession() {
+    session_start();
+    $_SESSION['url']="../html/authentification.php";
+    if (isset($_SESSION['login']) && isset($_SESSION['pass'])){
+        header("Location:http://localhost/projet/akniou_topalovic_projet_web/html/deconnexion.php") ;
+    }
+}
+?>

@@ -24,6 +24,7 @@ header a{
 	font-weight:bold;
 	margin: 0;
 	padding: 20px;
+	background-color: #b5ebfb;
 }
 /*===========================================================
                         	  	MENU
@@ -55,7 +56,7 @@ header a{
 	position: absolute;
 	top: 2em;
 	max-height:0em; 
-	margin:16px 0 0 15px;
+	margin:16px 0 0 16px;
 	background-color: white;
 	overflow: hidden;
 	transition: max-height 0.5s;
@@ -108,7 +109,7 @@ body{
 	margin: 0;
 	padding: 0;
 	width: 100%;
-	background-color: #e4cbff;
+	background-color: #b5ebfb;
 }
 
 *{
@@ -193,18 +194,25 @@ body{
 	padding-top: 100px;
 }
 
-.maringTopAuth{
-	margin-top:100px;
-}
-
 #divNomPrenom{
 	justify-content: center;
 }
 
 #divAuth{
 	width: 270px;
-	margin: auto;
+	margin: 100px auto auto auto;
 }
+
+/*===========================================================
+                        Deconnexion
+===========================================================*/
+
+#divDeco{
+	width: 250px;
+	margin: 100px auto auto auto;
+	padding-bottom: 15px;
+}
+
 /*########################################################################
 ==========================================================================
                             	GENERAL

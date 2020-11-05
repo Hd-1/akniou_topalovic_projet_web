@@ -3,18 +3,12 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Authentification</title>
+    <title>Redaction</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <script type="text/javascript" src="../javascript/ScriptAuthentification.js">
-
-    </script>
     <?php
-        include('../php/ScriptAuthentification.php');
-        testSession();
-        if(isset($_POST['valider'])){
-            $email = $_POST['email'];
-            $motDePasse = $_POST['motDePasse'];
-            authentification($email, $motDePasse);
+        include('../php/ScriptDeconnexion.php');
+        if(isset($_POST['deconnexion'])){
+            deconnexion();
         }
     ?>
 </head>
@@ -45,27 +39,17 @@
 	</nav>
 </header>
 <body class="centre noMargin">
-    <div class="blackBorder marginBotAuto marginLeftAuto marginRightAuto marginTopAuth bgWhite" id="divAuth">
+    <div class="blackBorder bgWhite" id="divDeco">
         <p>
-            Authentification<br>
+            Vous êtes déjà connecté !<br>
         </p>
         <form method="post">
         <div class="divFlexCol">
             <div class="divColElt">
-                <input type="text" name="email" placeholder="Identifiant">
-            </div>
-            <div class="divColElt"v>
-                <input type="password" name="motDePasse" placeholder="Mot de passe">
-            </div>
-            <div class="divColElt">
-                <input type="submit" name="valider" value="Se connecter" onsubmit="return valider()">
+                <input type="submit" name="deconnexion" value="Se déconnecter">
             </div>
         </div>
         </form>
-        <p>
-            Nouveau sur HKNews? <br>
-            <a href="creationCompte.php">Creer un compte</a>
-        </p>
     </div>
 </body>
 </html>

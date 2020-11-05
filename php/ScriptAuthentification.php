@@ -52,6 +52,9 @@ function authentification($email, $motDePasse){
         $authentification = new Authentification($email, $motDePasse);
         $test = testAuthentification($authentification);
         if($test == true){
+            session_start();
+            $_SESSION['login'] = $email;
+            $_SESSION['pass'] = $motDePasse;
             header("Location:http://localhost/projet/akniou_topalovic_projet_web/html/redaction.php");
             exit();
         } else {
@@ -64,3 +67,12 @@ function authentification($email, $motDePasse){
             </script>';
     }
 }
+//A faire
+function testSession() {
+    session_start();
+    $_SESSION['url']="../html/authentification.php";
+    if (isset($_SESSION['login']) && isset($_SESSION['pass'])){
+        header("Location:http://localhost/projet/akniou_topalovic_projet_web/html/deconnexion.php") ;
+    }
+}
+?>
