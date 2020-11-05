@@ -38,7 +38,7 @@ class News{
         try{
             //Test si l'ID du theme inséré est vide
             if(isEmpty($idtheme)){
-                throw new Exception("L'ID du theme est vide");
+                throw new Exception("Aucun theme sélectionné");
             } else {
                 $this->idtheme = trim($idtheme);
             }
@@ -127,11 +127,12 @@ class News{
 
 function creeNews($idtheme, $titrenews, $datenews, $textenews){
     try{
-        $idredacteur = getIdRedacteurByEmail($_SESSION['login']);
+        $email = $_SESSION['login'];
+        $idredacteur = getIdRedacteurByEmail($email);
         $news = new News(1,$idtheme, $titrenews, $datenews, $textenews, $idredacteur);
         insertNews($news);
     } catch(Exception $e) {
-
+        echo '<script type="text/javascript"> alert("'.$e->getMessage().'");</script>';
     }
 }
 

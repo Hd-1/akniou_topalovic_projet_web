@@ -75,8 +75,10 @@
 
     //Recupere l'id d'un redacteur grace a son email
     function getIdRedacteurByEmail($email){
+        $id = 0;
         $pdo = creeConnexion();
         $statement = $pdo->prepare("SELECT idredacteur FROM Redacteur WHERE adressemail=?;");
+        $statement->execute([$email]);
         while($row = $statement->fetch(PDO::FETCH_ASSOC)){
             $id = $row['idredacteur'];
         }

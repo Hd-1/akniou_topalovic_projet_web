@@ -7,6 +7,13 @@
     <?php
         include('../php/ScriptRedaction.php');
         testSession();
+        if(isset($_POST['valider'])){
+            $idtheme = $_POST['theme'];
+            $titrenews = $_POST['titre'];
+            $datenews = date('Y-m-d');
+            $textenews = $_POST['textenews'];
+            creeNews($idtheme, $titrenews, $datenews, $textenews);
+        }
     ?>
     <script type="text/javascript" src="../javascript/ScriptRedaction.js"></script>
 </head>
@@ -27,18 +34,18 @@
     <p>
         Redaction
     </p>
-    <form method="post" action="../php/redaction.php">
+    <form method="post">
         <div class="divFlexCol">
             <div class="divFlexRow divColElt" id="divNomPrenom">
                 <div class="divRowElt">
-                    <input type="text" name="titre" placeholder="Titre" size=50px maxlength="300" onkeyup="resteTitre(this.value);"><br/>
+                    <input type='text' name='titre' placeholder="Titre" size=50px maxlength="300" onkeyup="resteTitre(this.value);"><br/>
                     <span id="caracteresTitre">300</span> caractères restants
-                    <select name="theme" id="themeChoisi">
+                    <select name='theme'>
                         <option value="">--Choisir un thème--</option>
                         <?php affichageTheme(); ?>
                     </select>
                     <br/>
-                    <textarea rows="10" cols="70" placeholder="Ecrire l'article..." maxlength="5000" onkeyup="resteRedaction(this.value);"></textarea><br/>
+                    <textarea name="textenews"rows="10" cols="70" placeholder="Ecrire l'article..." maxlength="5000" onkeyup="resteRedaction(this.value);"></textarea><br/>
                     <span id="caracteresRedaction">5000</span> caractères restants
                 </div>
             </div>
