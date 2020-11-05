@@ -1,9 +1,4 @@
 <?php
-/*
-	********************************************************************************************
-	CONFIGURATION
-	********************************************************************************************
-*/
 // expéditeur du dormulaire. Pour des raisons de sécurité, de plus en plus d'hébergeurs imposent que ce soit une adresse sur votre hébergement/nom de domaine.
 // Par exemple si vous mettez ce script sur votre site "test-site.com", mettez votre email @test-site.com comme expéditeur (par exemple contact@test-site.com)
 // Si vous ne changez pas cette variable, vous risquez de ne pas recevoir de formulaire.
@@ -21,15 +16,9 @@ $message_envoye = "Votre message nous est bien parvenu !";
 $message_non_envoye = "L'envoi du mail a échoué, veuillez réessayer SVP.";
  
 // Messages d'erreur du formulaire
-$message_erreur_formulaire = "Vous devez d'abord <a href=\"contact.html\">envoyer le formulaire</a>.";
+$message_erreur_formulaire = "Vous devez d'abord <a href=\"contact.php\">envoyer le formulaire</a>.";
 $message_formulaire_invalide = "Vérifiez que tous les champs soient bien remplis et que l'email soit sans erreur.";
- 
-/*
-	********************************************************************************************
-	FIN DE LA CONFIGURATION
-	********************************************************************************************
-*/
- 
+
 // on teste si le formulaire a été soumis
 if (!isset($_POST['envoi']))
 {
@@ -43,12 +32,6 @@ else
 	 */
 	function Rec($text)
 	{
-		$text = htmlspecialchars(trim($text), ENT_QUOTES);
-		if (1 === get_magic_quotes_gpc())
-		{
-			$text = stripslashes($text);
-		}
- 
 		$text = nl2br($text);
 		return $text;
 	};
@@ -58,7 +41,7 @@ else
 	 */
 	function IsEmail($email)
 	{
-		$value = preg_match('/^(?:[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+\.)*[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+@(?:(?:(?:[a-zA-Z0-9_](?:[a-zA-Z0-9_\-](?!\.)){0,61}[a-zA-Z0-9_-]?\.)+[a-zA-Z0-9_](?:[a-zA-Z0-9_\-](?!$)){0,61}[a-zA-Z0-9_]?)|(?:\[(?:(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\.){3}(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\]))$/', $email);
+		$value = preg_match('/^\w+[\+\.\w-]*@([\w-]+\.)*\w+[\w-]*\.([a-z]{2,4}|\d+)$/i', $email);
 		return (($value === 0) || ($value === false)) ? false : true;
 	}
  
@@ -124,7 +107,7 @@ else
 	else
 	{
 		// une des 3 variables (ou plus) est vide ...
-		echo '<p>'.$message_formulaire_invalide.' <a href="contact.html">Retour au formulaire</a></p>'."\n";
+		echo '<p>'.$message_formulaire_invalide.' <a href="contact.php">Retour au formulaire</a></p>'."\n";
 	};
 }; // fin du if (!isset($_POST['envoi']))
 ?>
