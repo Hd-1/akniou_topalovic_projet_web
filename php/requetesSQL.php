@@ -1,5 +1,8 @@
 <?php
 include_once("ScriptTheme.php");
+include_once("ScriptNews.php");
+include_once("ScriptRedacteur.php");
+
 /*###############################################   Connexion   ###############################################*/
 
 //Fonction qui crée une connexion à la bdd grace à PDO pour prévenir des SQL Injections 
@@ -100,6 +103,24 @@ function getTheme(){
         $table[] = $theme;
     }
     
+    return $table;
+}
+
+//Recupere tous les news
+function getNews(){
+    $pdo = creeConnexion();
+    $statement = $pdo->prepare("SELECT * FROM News;");
+    $statement->execute();
+    while($row = $statement->fetch(PDO::FETCH_ASSOC)){
+        $idnews = $row['idnews'];
+        $idtheme = $row['idtheme'];
+        $titrenews = $row['titrenews'];
+        $datenews = $row['datenews'];
+        $textenews = $row['textenews'];
+        $idredacteur = $row['idredacteur'];
+        $news = new News($idnews,$idtheme, $titrenews, $datenews, $textenews, $idredacteur);
+        $table[] = $news;
+    }
     return $table;
 }
 
