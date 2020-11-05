@@ -48,11 +48,14 @@
         <div class="divFlexCol">
             <div class="divFlexRow divColElt" id="divNomPrenom">
                 <div class="divRowElt">
-                    <input type="text" name="titre" placeholder="Titre" size=50px onkeyup="resteTitre(this.value);"><br/>
-                    <span id="caracteresTitre">100</div>span> caractères restants
-
-                  <textarea rows="10" cols="70" placeholder="Ecrire l'article..." onkeyup="resteRedaction(this.value);"></textarea><br/>
-                        <span id="caracteresRedaction">100</span> caractères restants
+                    <input type="text" name="titre" placeholder="Titre" size=46px onkeyup="resteTitre(this.value);">
+                    <select name="theme" id="themeChoisi">
+                        <option value="">--Choisir un thème--</option>
+                    </select>
+                    <br/>
+                    <span id="caracteresTitre">250</span> caractères restants
+                  <textarea rows="10" cols="70" onkeyup="resteRedaction(this.value);"></textarea><br/>
+                        <span id="caracteresRedaction">250</span> caractères restants
                 </div>
             </div>
                 <td><input type="submit" name="valider" value="Terminer" ></td>

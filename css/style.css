@@ -161,13 +161,16 @@ body{
 }
 
 .articleNews{
-	background-color: bisque;
-	max-width: 50%;
+	background-color: rgba(247, 223, 211, 1);
+	max-width: 40%;
+	width: 40%;
 	margin-right: auto;
 	margin-left: auto;
 	border: 2px black solid;
 	padding-bottom: 15px;
-	display: inline-block;
+	display: block;
+	float: left;
+	margin: 2% 5% 2% 5%;
 }
 
 .articleNews a{
@@ -178,7 +181,7 @@ body{
 }
 
 #articleIntro{
-	background-color: bisque;
+	background-color: rgba(247, 223, 211, 0.8);;
 	margin: 0;
 }
 
