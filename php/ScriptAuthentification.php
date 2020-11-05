@@ -55,6 +55,7 @@ function authentification($email, $motDePasse){
             session_start();
             $_SESSION['login'] = $email;
             $_SESSION['pass'] = $motDePasse;
+            $_SESSION['etat'] = true;
             header("Location:http://localhost/projet/akniou_topalovic_projet_web/html/redaction.php");
             exit();
         } else {
@@ -67,12 +68,12 @@ function authentification($email, $motDePasse){
             </script>';
     }
 }
-//A faire
+
 function testSession() {
     session_start();
-    $_SESSION['url']="../html/authentification.php";
     if (isset($_SESSION['login']) && isset($_SESSION['pass'])){
-        header("Location:http://localhost/projet/akniou_topalovic_projet_web/html/deconnexion.php") ;
+        echo "<script src='../javascript/ScriptAuthentification.js' type='text/javascript'> setBoutonDeco(".$_SESSION['etat']." </script>";
+        header("Location:http://localhost/projet/akniou_topalovic_projet_web/html/deconnexion.php");
     }
 }
 ?>

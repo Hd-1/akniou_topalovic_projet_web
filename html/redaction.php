@@ -4,38 +4,21 @@
     <meta charset="utf-8">
     <title>Redaction</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-  <!--  <?php
+    <?php
         include('../php/ScriptRedaction.php');
         testSession();
-        if(isset($_POST['valider'])){
-            authentification($_POST['email'], $_POST['motDePasse']);
-        }
-    ?>-->
+    ?>
     <script type="text/javascript" src="../javascript/ScriptRedaction.js"></script>
 </head>
 <header>
     <h1 id="titre">HK News</h1>
     <nav>
         <ul id="menu">
-            <li>
-                <a href="accueil.php" class="souligne elmtMenu" >Accueil</a>
-            </li>
-
-            <li>
-                <a href="###" class="souligne elmtMenu">News</a>
-            </li>
-
-            <li>
-                <a href="redaction.php" class="souligne elmtMenu" id="pageActuelle">Rédiger une news</a>
-            </li>
-
-            <li>
-                <a href="###" class="souligne elmtMenu">Contacts</a>
-            </li>
-
-            <li>
-                <a href="authentification.php" class="souligne elmtMenu">Connexion</a>
-            </li>
+            <li><a href="accueil.php" class="souligne elmtMenu">Accueil</a></li>
+            <li><a href="###" class="souligne elmtMenu">News</a></li>
+            <li><a href="redaction.php" class="souligne elmtMenu" id="pageActuelle">Rédiger une news</a></li>
+            <li><a href="###" class="souligne elmtMenu">Contacts</a></li>
+            <?php testBoutonDeco(); ?> 
         </ul>
     </nav>
 </header>

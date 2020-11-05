@@ -155,12 +155,21 @@ function creationCompte($nom, $prenom, $email, $confirmationEmail, $motDePasse, 
     }
 }
 
-//A faire
 function testSession() {
     session_start();
     $_SESSION['url']="../html/authentification.php";
     if (isset($_SESSION['login']) && isset($_SESSION['pass'])){
+        echo "<script src='../javascript/ScriptAuthentification.js' type='text/javascript'> setBoutonDeco(".$_SESSION['etat']." </script>";
         header("Location:http://localhost/projet/akniou_topalovic_projet_web/html/deconnexion.php") ;
+    }
+}
+
+function testBoutonDeco() {
+    session_start();
+    if (isset($_SESSION['login']) && isset($_SESSION['pass'])){
+        echo '<a href="authentification.php" class="souligne elmtMenu">Deconnexion</a>';
+    } else {
+        echo '<a href="authentification.php" class="souligne elmtMenu">Connexion</a>';
     }
 }
 ?>
