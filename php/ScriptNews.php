@@ -152,7 +152,7 @@ function afficheNews(){
                     <h1>".$titrenews."</h1>
                     <h2>Par: ".$nom." ".$prenom." - ".$datenews."</h2>
                     <p>".$textenews."</p>
-                    <a class='souligne' href='###'>en savoir plus...</a>
+                    <a class='souligne btnEnSavoirPlus' href='###'>en savoir plus...</a>
                 ";
                     adminNews($idnews);
             echo"
@@ -170,10 +170,11 @@ function adminNews($idnews){
         $email = $_SESSION['login'];
         if($email == "admin@admin.com"){
             echo "
-                <footer>
-                    <a href='' onclick='return modifierNews(".$idnews.");'>Modifer</a>
-                    <a href='' onclick='return supprimerNews(".$idnews.");'>Supprimer</a>
-                </footer>
+            <div class='footerArticle'>
+                <a href='' class='souligne btnFooterArticle' onclick='return modifierNews(".$idnews.");'>Modifer</a>
+                <a href='' class='souligne btnFooterArticle' onclick='return supprimerNews(".$idnews.");'>Supprimer</a>
+            </div>
+        </article>
             ";
         }
     } catch(Exception $e) {

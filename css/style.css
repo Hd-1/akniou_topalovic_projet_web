@@ -142,6 +142,20 @@ body{
 #sectionArticle{
 	background-color: #CCE4F7;
 	margin: 0;
+
+}
+
+#articleIntro{
+	background-color: rgba(247, 223, 211, 0.8);;
+	margin: 0;
+}
+
+#articleIntro p{
+	margin: 0;
+}
+
+.imgintro{
+	size:500px;
 }
 
 .articleNews h1{
@@ -150,10 +164,6 @@ body{
 	margin: 0;
 	font-size: 28px;
 	border: 2px 2px 0 2px black solid;
-}
-
-.articleNews p{
-	padding: 5px 15px 5px 15px;
 }
 
 .articleNews h2{
@@ -171,31 +181,36 @@ body{
 	margin-right: auto;
 	margin-left: auto;
 	border: 2px black solid;
-	padding-bottom: 15px;
+	padding-bottom: 7px;
 	display: block;
 	float: left;
 	margin: 2% 5% 2% 5%;
 	text-align: justify;
 }
 
-.articleNews a{
+.articleNews p{
+	padding: 5px 15px 5px 15px;
+}
+
+.footerArticle{
+	border-top: #2e373f solid 2px;
+	margin: 5px 0;
+	padding: 0;
+}
+
+.btnFooterArticle{
+	text-decoration: none;
+	color: black;
+	font-size: 16px;
+	margin: 0;
+	margin: 10px 15px 0px ;
+}
+
+.btnEnSavoirPlus{
 	text-decoration: none;
 	color: black;
 	font-size: 16px;
 	margin: 0 0 0 85%;
-}
-
-#articleIntro{
-	background-color: rgba(247, 223, 211, 0.8);;
-	margin: 0;
-}
-
-#articleIntro p{
-	margin: 0;
-}
-
-.imgintro{
-	size:500px;
 }
 /*===========================================================
                         	Recherche
@@ -233,7 +248,6 @@ body{
   	position: relative;
   	transition: 0.5s;
   }
-
   .boutonRecherche span:after{
 	content: '\00bb';
 	position: absolute;
@@ -245,11 +259,11 @@ body{
   .boutonRecherche:hover span {
 	padding-right: 25px;
   }
-  
   .boutonRecherche:hover span:after {
 	opacity: 1;
 	right: 0;
   }
+
 /*===========================================================
                         	Calendrier
 ===========================================================*/

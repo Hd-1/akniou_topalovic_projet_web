@@ -34,13 +34,13 @@
         <h1>Ceci est le titre de l'article</h1>
         <h2>Ceci est la date et l'auteur de l'article</h2>
         <p>Ceci est le contenu de l'article</p>
-        <a class="souligne" href="###">en savoir plus...</a>
+        <a class="souligne btnEnSavoirPlus" href="###">en savoir plus...</a>
     </article>
-
+    
     <article class="articleNews">
         <h1>Ceci est le titre de l'article</h1>
         <h2>Ceci est la date et l'auteur de l'article</h2>
         <p>Ceci est le contenu de l'article</p>
-        <a class="souligne" href="###">en savoir plus...</a>
+        <a class="souligne btnEnSavoirPlus" href="###">en savoir plus...</a>
     </article>
 </section>
