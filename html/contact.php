@@ -7,7 +7,7 @@
     <script></script>
     <?php
     if(isset($_POST["envoi"]))
-        include('../php/ScriptContact.php');
+        include_once('../php/ScriptContact.php');
         if(isset($_POST['valider'])){
             authentification($_POST['email'], $_POST['motDePasse']);
         }?>

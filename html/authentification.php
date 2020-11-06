@@ -9,7 +9,7 @@
 
     </script>
     <?php
-        include('../php/ScriptAuthentification.php');
+        include_once('../php/ScriptAuthentification.php');
         testSession();
         if(isset($_POST['valider'])){
             $email = $_POST['email'];

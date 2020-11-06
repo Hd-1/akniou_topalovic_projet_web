@@ -33,4 +33,13 @@ class Theme{
     }
 }
 
+function affichageTheme(){
+    $table = getTheme();
+    foreach($table as $theme){
+        $idtheme = $theme->getIdtheme();
+        $description = $theme->getDescription();
+        echo "<option value='".$idtheme."'>".$description."</option>";
+    }
+}
+
 ?>

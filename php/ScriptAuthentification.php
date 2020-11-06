@@ -1,5 +1,5 @@
 <?php
-include('requetesSQL.php');
+include_once('requetesSQL.php');
 
 class Authentification {
     private $email;

@@ -6,6 +6,9 @@
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <script type="text/javascript" src="../javascript/ScriptRecherche.js"></script>
     <script type="text/javascript" src="../javascript/ScriptCalendrier.js"></script>
+    <?php 
+        include_once('../php/ScriptNews.php');
+    ?>
 </head>
 <header>
     <h1 id="titre">HK News</h1>
@@ -39,6 +42,7 @@
                 <br/>
                <select name="theme" id="themeChoisi">
                     <option value="">--Choisir un thème--</option>
+                    <?php affichageTheme(); ?>
                 </select>
                 <br/>
                 <input type="submit" name="Rechercher" value="Rechercher" onsubmit="">
@@ -47,17 +51,5 @@
         </div>
     </div>
     <section id="sectionArticle">
-        <article class="articleNews">
-            <h1>Ceci est le titre de l'article</h1>
-            <h2>Ceci est la date et l'auteur de l'article</h2>
-            <p>Ceci est le contenu de l'article</p>
-            <a class="souligne" href="###">en savoir plus...</a>
-        </article>
-    
-        <article class="articleNews">
-            <h1>Ceci est le titre de l'article</h1>
-            <h2>Ceci est la date et l'auteur de l'article</h2>
-            <p>Ceci est le contenu de l'article</p>
-            <a class="souligne" href="###">en savoir plus...</a>
-        </article>
+        <?php afficheNews(); ?>
     </section>

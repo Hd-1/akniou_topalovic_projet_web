@@ -77,6 +77,22 @@ function getIdRedacteurByEmail($email){
     }
     return $id;
 }
+
+function getRedacteurById($idredacteur){
+    $pdo = creeConnexion();
+    $statement = $pdo->prepare("SELECT * FROM Redacteur WHERE idredacteur=?;");
+    $statement->execute([$idredacteur]);
+    while($row = $statement->fetch(PDO::FETCH_ASSOC)){
+        $idreacteur = $row['idredacteur'];
+        $nom = $row['nom'];
+        $prenom = $row['prenom'];
+        $adressemail = $row['adressemail'];
+        $motDePasse = $row['motdepasse'];
+        $redacteur = new Redacteur($idredacteur, $nom, $prenom, $adressemail, $motDePasse);
+    }
+    return $redacteur;
+}
+
 /*###############################################   News   ###############################################*/
 
 //Insertion d'une news dans la base de données

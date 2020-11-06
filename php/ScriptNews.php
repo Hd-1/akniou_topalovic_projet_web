@@ -1,4 +1,7 @@
-<?php 
+<?php
+
+include_once('requetesSQL.php');
+
 class News{
 
     private $idnews;
@@ -118,6 +121,41 @@ class News{
 
     function getIdredacteur(){
         return $this->idredacteur;
+    }
+}
+
+function creeNews($idtheme, $titrenews, $datenews, $textenews){
+    try{
+        $email = $_SESSION['login'];
+        $idredacteur = getIdRedacteurByEmail($email);
+        $news = new News(1,$idtheme, $titrenews, $datenews, $textenews, $idredacteur);
+        insertNews($news);
+    } catch(Exception $e) {
+        echo '<script type="text/javascript"> alert("'.$e->getMessage().'");</script>';
+    }
+}
+
+function afficheNews(){
+    try{
+        $table = getNews();
+        foreach($table as $news){
+            $titrenews = $news->getTitrenews();
+            $datenews = $news->getDatenews();
+            $idredacteur = $news->getIdredacteur();
+            $redacteur = getRedacteurById($idredacteur);
+            $nom = $redacteur->getNom();
+            $prenom = $redacteur->getPrenom();
+            $textenews = $news->getTextenews();
+            echo 
+                "<article class='articleNews'>
+                    <h1>".$titrenews."</h1>
+                    <h2>Par: ".$nom." ".$prenom." - ".$datenews."</h2>
+                    <p>".$textenews."</p>
+                    <a class='souligne' href='###'>en savoir plus...</a>
+                </article>";
+        }
+    } catch(Exception $e) {
+        echo '<script type="text/javascript"> alert("'.$e->getMessage().'");</script>';
     }
 }
 ?>

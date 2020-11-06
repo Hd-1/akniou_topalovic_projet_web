@@ -5,7 +5,7 @@
     <title>Redaction</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <?php
-        include('../php/ScriptRedaction.php');
+        include_once('../php/ScriptRedaction.php');
         testSession();
         if(isset($_POST['valider'])){
             $idtheme = $_POST['theme'];
@@ -22,9 +22,9 @@
     <nav>
         <ul id="menu">
             <li><a href="accueil.php" class="souligne elmtMenu">Accueil</a></li>
-            <li><a href="###" class="souligne elmtMenu">News</a></li>
+            <li><a href="news.php" class="souligne elmtMenu">News</a></li>
             <li><a href="redaction.php" class="souligne elmtMenu" id="pageActuelle">Rédiger une news</a></li>
-            <li><a href="###" class="souligne elmtMenu">Contacts</a></li>
+            <li><a href="contact.php" class="souligne elmtMenu">Contacts</a></li>
             <?php testBoutonDeco(); ?> 
         </ul>
     </nav>

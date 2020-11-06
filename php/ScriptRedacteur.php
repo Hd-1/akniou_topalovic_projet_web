@@ -1,7 +1,7 @@
 <?php
 include_once('requetesSQL.php');
 
-class CreationCompte {
+class Redacteur {
     private $idredacteur;
     private $nom;
     private $prenom;
@@ -16,7 +16,7 @@ class CreationCompte {
         $this->setMotDePasse($motDePasse);
     }
 
-    //Setters des attributs de CreationCompte
+    //Setters des attributs de Redacteur
     function setIdredacteur($idredacteur){
         try{
             //Test si l'ID inséré est vide

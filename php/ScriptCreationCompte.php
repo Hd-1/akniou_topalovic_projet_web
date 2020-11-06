@@ -35,7 +35,7 @@ function creationCompte($nom, $prenom, $email, $confirmationEmail, $motDePasse, 
         $testMotDePasse = testMotDePasse($motDePasse, $confirmationMotDePasse);
         if($testEmail == true && $testMotDePasse == true){
             if(testCompteExistant($email)){
-                $compte = new CreationCompte(1, $nom, $prenom, $email, $motDePasse);
+                $compte = new Redacteur(1, $nom, $prenom, $email, $motDePasse);
                 $test = insertCompte($compte);
                 if($test == true){
                     header("Location:http://localhost/projet/akniou_topalovic_projet_web/html/authentification.php");
