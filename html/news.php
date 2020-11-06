@@ -27,7 +27,7 @@
         <div class="divFlexRow divColElt" id="divNomPrenom">
             <div class="divRowElt">
             <form method="post">
-                <input type="text" name="recherche" placeholder="Recherche..." id="recherche" size="45" >
+                <input type="text" name="recherche" placeholder="Recherche dans le titre..." id="recherche" size="45" >
                 <br/><br/>
                <input type="text" placeholder="Date début" value="" name="date1" id="champ_date1" size="12" maxlength="10">
                 <div id="calendarMain1"></div>
