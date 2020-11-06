@@ -7,7 +7,6 @@ function calInit(divId, btName, fieldId, classTable, classDay, classSel){
 	// si btName est definit, un bouton est creer. En cliquant sur ce bouton le calendrier est affichee / masquee
 	// si btName n'est pas definit, on attache la fonction calToogle au champ de texte qui contiendra la date
 	if(btName=="") dateEl.addEventListener('click', function(){	calToogleFromField(fieldId); }, false);
-    else h = '<img height="32px" src="./images/calendrier.png" alt="calendriervalue="'+btName+'" onclick="calToogle('+jsSDPId+');" />';
 	// creer un bloc div qui contient des boutons de navigation, le titre et le bloc dans lequel sera affiche le calendrier
 	h += '<div id="calendarWrap'+jsSDPId+'" class="calendarWrap"><ul><li><input type="button" value="&lsaquo;" onclick="calMonthNav('+jsSDPId+', \'-1\');" /></li><li id="calendarTitle'+jsSDPId+'" class="calendarTitle"></li><li><input type="button" value="&rsaquo;" onclick="calMonthNav('+jsSDPId+', \'+1\');" /></li></ul><div id="calendar'+jsSDPId+'"></div></div><div class="spacer"></div>';
 	// ajoute le code HTML
@@ -23,9 +22,8 @@ function calInit(divId, btName, fieldId, classTable, classDay, classSel){
 	jsSDPId++;
 	return 1;
 }
-//
+
 // affiche / masque le calendrier
-//
 function calToogle(id){
 	if(jsSDPObj[id] == undefined) return 0;
 	var el = document.getElementById('calendarWrap'+id);
@@ -39,9 +37,8 @@ function calToogle(id){
 		el.style.display = "block";
 	}
 }
-//
+
 // affiche / masque le calendrier (clic depuis un champ de texte)
-//
 function calToogleFromField(fieldId){
 	for(var i = 0; i<jsSDPObj.length; i++){
 		if(jsSDPObj[i][1]==fieldId){
@@ -50,27 +47,24 @@ function calToogleFromField(fieldId){
 		}
 	}
 }
-//
+
 // navigation par mois
-//
 function calMonthNav(id, val){
 	if(jsSDPObj[id] == undefined) return 0;
 	jsSDPObj[id][0].setMonth(val);
 	jsSDPObj[id][0].show();
 	calShowTitle(id);
 }
-//
+
 // navigation par annee
-//
 function calYearNav(id, val){
 	if(jsSDPObj[id] == undefined) return 0;
 	jsSDPObj[id][0].setYear(val);
 	jsSDPObj[id][0].show();
 	calShowTitle(id);
 }
-//
+
 // callback : gere un clic sur une date
-//
 function calClick(dateStr, id){
 	// cherche l'objet
 	for(var i = 0; i<jsSDPObj.length; i++){
@@ -87,14 +81,13 @@ function calClick(dateStr, id){
 	field.value = dateArr[0]+'/'+dateArr[1]+'/'+dateArr[2];
 	document.getElementById('calendarWrap'+id).style.display = "none";
 }
-//
+
 // affiche le titre
-//
 function calShowTitle(id){
 	if(jsSDPObj[id] == undefined) return 0;
 	document.getElementById('calendarTitle'+id).innerHTML = ' '+jsSDPMonthName[jsSDPObj[id][0].dateDisp.getMonth()]+' '+jsSDPObj[id][0].dateDisp.getFullYear()+' ';
 }
-//
+
 // cree l'objet jsSimpleDatePickr
 var jsSDPObj = Array();
 var jsSDPId = 0;

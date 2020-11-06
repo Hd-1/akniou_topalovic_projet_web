@@ -1,17 +1,11 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <title>Redaction</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-  <!--  <?php
-        include('../php/redaction.php');
-        if(isset($_POST['valider'])){
-            authentification($_POST['email'], $_POST['motDePasse']);
-        }
-    ?>-->
-    <script type="text/javascript" src="../javascript/ScriptRedaction.js"></script>
+    <script type="text/javascript" src="../javascript/ScriptRecherche.js"></script>
+    <script type="text/javascript" src="../javascript/ScriptCalendrier.js"></script>
 </head>
 <header>
     <h1 id="titre">HK News</h1>
@@ -26,6 +20,32 @@
     </nav>
 </header>
 <body>
+    <div class="divFlexCol recherche">
+        <div class="divFlexRow divColElt" id="divNomPrenom">
+            <div class="divRowElt">
+            <form method="post">
+                <input type="text" name="recherche" placeholder="Recherche..." id="recherche" size="45" >
+                <br/><br/>
+               <input type="text" placeholder="Date début" value="" name="date1" id="champ_date1" size="12" maxlength="10">
+                <div id="calendarMain1"></div>
+                    <script type="text/javascript">
+                        calInit("calendarMain1", "", "champ_date1", "jsCalendar", "day", "selectedDay");
+                    </script>
+                <input type="text" placeholder="Date fin" value="" name="date2" id="champ_date2" size="12" maxlength="10">
+                <div id="calendarMain2"></div>
+                    <script type="text/javascript">
+                        calInit("calendarMain2", "", "champ_date2", "jsCalendar", "day", "selectedDay");
+                    </script>
+                <br/>
+               <select name="theme" id="themeChoisi">
+                    <option value="">--Choisir un thème--</option>
+                </select>
+                <br/>
+                <input type="submit" name="Rechercher" value="Rechercher" onsubmit="">
+            </form>
+            </div>
+        </div>
+    </div>
     <section id="sectionArticle">
         <article class="articleNews">
             <h1>Ceci est le titre de l'article</h1>
@@ -41,5 +61,3 @@
             <a class="souligne" href="###">en savoir plus...</a>
         </article>
     </section>
-
-<body>
