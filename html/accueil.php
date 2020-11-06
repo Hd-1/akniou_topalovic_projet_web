@@ -5,6 +5,7 @@
 	<title>HK News</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <?php
+        session_start();
         include_once('../php/ScriptAccueil.php');
     ?>
 </head>

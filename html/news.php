@@ -7,6 +7,7 @@
     <script type="text/javascript" src="../javascript/ScriptRecherche.js"></script>
     <script type="text/javascript" src="../javascript/ScriptCalendrier.js"></script>
     <?php 
+        session_start();
         include_once('../php/ScriptNews.php');
     ?>
 </head>
@@ -18,7 +19,7 @@
             <li><a href="news.php" class="souligne elmtMenu" id="pageActuelle">News</a></li>
             <li><a href="redaction.php" class="souligne elmtMenu">Rédiger une news</a></li>
             <li><a href="contact.php" class="souligne elmtMenu">Contacts</a></li>
-            <li><a href="authentification.php" class="souligne elmtMenu">Connexion</a></li>
+            <?php testBoutonDeco();?>
         </ul>
     </nav>
 </header>

@@ -139,6 +139,7 @@ function afficheNews(){
     try{
         $table = getNews();
         foreach($table as $news){
+            $idnews = $news->getIdnews();
             $titrenews = $news->getTitrenews();
             $datenews = $news->getDatenews();
             $idredacteur = $news->getIdredacteur();
@@ -146,16 +147,39 @@ function afficheNews(){
             $nom = $redacteur->getNom();
             $prenom = $redacteur->getPrenom();
             $textenews = $news->getTextenews();
-            echo 
-                "<article class='articleNews'>
+            echo "
+                <article class='articleNews' id=".$idnews.">
                     <h1>".$titrenews."</h1>
                     <h2>Par: ".$nom." ".$prenom." - ".$datenews."</h2>
                     <p>".$textenews."</p>
                     <a class='souligne' href='###'>en savoir plus...</a>
-                </article>";
+                ";
+                    adminNews($idnews);
+            echo"
+                </article>
+            ";
         }
     } catch(Exception $e) {
         echo '<script type="text/javascript"> alert("'.$e->getMessage().'");</script>';
     }
 }
+
+function adminNews($idnews){
+    try{
+        //Si une session est deja demarré alors je peux directement récupérer le login de la session en cours
+        $email = $_SESSION['login'];
+        var_dump($email);
+        if($email == "admin@admin.com"){
+            echo "
+                <footer>
+                    <a href='' onclick='return modifierNews(".$idnews.")>Modifer</a>
+                    <a href='' onclick='return supprimerNews(".$idnews.");'>Supprimer</a>
+                </footer>
+            ";
+        }
+    } catch(Exception $e) {
+        echo '<script type="text/javascript"> alert("'.$e->getMessage().'");</script>';
+    }
+}
+
 ?>

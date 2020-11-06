@@ -1,4 +1,7 @@
 <?php
+
+include_once('requetesSQL.php');
+
 // expéditeur du dormulaire. Pour des raisons de sécurité, de plus en plus d'hébergeurs imposent que ce soit une adresse sur votre hébergement/nom de domaine.
 // Par exemple si vous mettez ce script sur votre site "test-site.com", mettez votre email @test-site.com comme expéditeur (par exemple contact@test-site.com)
 // Si vous ne changez pas cette variable, vous risquez de ne pas recevoir de formulaire.

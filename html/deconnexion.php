@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <script type="text/javascript" src="../javascript/ScriptAuthentification.js"> </script>
     <?php
+        session_start();
         include_once('../php/ScriptDeconnexion.php');
         if(isset($_POST['deconnexion'])){
             deconnexion();

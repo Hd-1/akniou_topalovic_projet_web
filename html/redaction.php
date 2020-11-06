@@ -5,6 +5,7 @@
     <title>Redaction</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <?php
+        session_start();
         include_once('../php/ScriptRedaction.php');
         testSession();
         if(isset($_POST['valider'])){
@@ -25,7 +26,7 @@
             <li><a href="news.php" class="souligne elmtMenu">News</a></li>
             <li><a href="redaction.php" class="souligne elmtMenu" id="pageActuelle">Rédiger une news</a></li>
             <li><a href="contact.php" class="souligne elmtMenu">Contacts</a></li>
-            <?php testBoutonDeco(); ?> 
+            <?php testBoutonDeco();?> 
         </ul>
     </nav>
 </header>

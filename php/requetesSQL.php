@@ -139,6 +139,20 @@ function getNews(){
     }
     return $table;
 }
+
+//Retourne le theme à partir de son id
+function getThemeById($idTheme){
+    $pdo = creeConnexion();
+    $statement = $pdo->prepare("SELECT * FROM Theme WHERE idtheme = ?;");
+    $statement->execute([$idTheme]);
+    while($row = $statement->fetch(PDO::FETCH_ASSOC)){
+        $idtheme = $row['idtheme'];
+        $description = $row['description'];
+        $theme = new Theme($idtheme, $description);
+    }
+    return $theme;
+}
+
 /*###############################################   Recherche   ###############################################*/
 
 //recherche une news contenant dans le titre une partie de ce que l'utilisateur a rentrer dans sa recherche
@@ -232,6 +246,13 @@ function rechercheByTheme($idTheme){
 }
 
 
+//Supprime une news news grace a l'id
+function deleteNews($idnews){
+    $pdo = creeConnexion();
+    $statement = $pdo->prepare("DELETE FROM News WHERE idnews=?;");
+    return $statement->execute([$idnews]);
+}
+
 /*###############################################   Autre   ###############################################*/
 //Test si une chaine est vide
 function isEmpty($str){
@@ -243,15 +264,12 @@ function isEmpty($str){
     }
 }
 
-//Retourne le theme à partir de son id
-function getThemeById($idTheme){
-    $pdo = creeConnexion();
-    $statement = $pdo->prepare("SELECT * FROM Theme WHERE idtheme = ?;");
-    $statement->execute([$idTheme]);
-    while($row = $statement->fetch(PDO::FETCH_ASSOC)){
-        $idtheme = $row['idtheme'];
-        $description = $row['description'];
-        $theme = new Theme($idtheme, $description);
+function testBoutonDeco() {
+    if (isset($_SESSION['login']) && isset($_SESSION['pass'])){
+        echo '<li><a href="authentification.php" class="souligne elmtMenu">Deconnexion</a></li>';
+    } else {
+        echo '<li><a href="authentification.php" class="souligne elmtMenu">Connexion</a></li>';
     }
-    return $theme;
 }
+
+?>

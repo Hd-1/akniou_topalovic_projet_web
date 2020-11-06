@@ -52,7 +52,6 @@ function authentification($email, $motDePasse){
         $authentification = new Authentification($email, $motDePasse);
         $test = testAuthentification($authentification);
         if($test == true){
-            session_start();
             $_SESSION['login'] = $email;
             $_SESSION['pass'] = $motDePasse;
             $_SESSION['etat'] = true;
@@ -70,7 +69,6 @@ function authentification($email, $motDePasse){
 }
 
 function testSession() {
-    session_start();
     if (isset($_SESSION['login']) && isset($_SESSION['pass'])){
         echo "<script src='../javascript/ScriptAuthentification.js' type='text/javascript'> setBoutonDeco(".$_SESSION['etat']." </script>";
         header("Location:http://localhost/projet/akniou_topalovic_projet_web/html/deconnexion.php");

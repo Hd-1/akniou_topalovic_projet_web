@@ -53,7 +53,6 @@ function creationCompte($nom, $prenom, $email, $confirmationEmail, $motDePasse, 
 }
 
 function testSession() {
-    session_start();
     $_SESSION['url']="../html/authentification.php";
     if (isset($_SESSION['login']) && isset($_SESSION['pass'])){
         echo "<script src='../javascript/ScriptAuthentification.js' type='text/javascript'> setBoutonDeco(".$_SESSION['etat']." </script>";
@@ -62,7 +61,6 @@ function testSession() {
 }
 
 function testBoutonDeco() {
-    session_start();
     if (isset($_SESSION['login']) && isset($_SESSION['pass'])){
         echo '<a href="authentification.php" class="souligne elmtMenu">Deconnexion</a>';
     } else {

@@ -9,6 +9,7 @@
 
     </script>
     <?php
+        session_start();
         include_once('../php/ScriptAuthentification.php');
         testSession();
         if(isset($_POST['valider'])){

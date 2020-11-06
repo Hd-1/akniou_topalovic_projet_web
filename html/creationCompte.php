@@ -7,8 +7,8 @@
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <script language="javascript" type="text/javascript" src="../javascript/ScriptCreationCompte.js"></script>
     <?php
-        include_once('../php/ScriptCreationCompte.php');
         testSession();
+        include_once('../php/ScriptCreationCompte.php');
         if(isset($_POST['valider'])){
             $nom = $_POST['nom'];
             $prenom = $_POST['prenom'];

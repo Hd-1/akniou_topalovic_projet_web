@@ -6,8 +6,9 @@
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <script></script>
     <?php
+    session_start();
+    include_once('../php/ScriptContact.php');
     if(isset($_POST["envoi"]))
-        include_once('../php/ScriptContact.php');
         if(isset($_POST['valider'])){
             authentification($_POST['email'], $_POST['motDePasse']);
         }?>
@@ -20,7 +21,7 @@
             <li><a href="news.php" class="souligne elmtMenu">News</a></li>
             <li><a href="redaction.php" class="souligne elmtMenu">Rédiger une news</a></li>
             <li><a href="contact.php" class="souligne elmtMenu" id="pageActuelle">Contact</a></li>
-            <li id="boutonDeco"><a href="authentification.php" class="souligne elmtMenu">Connexion</a></li>
+            <?php testBoutonDeco();?>
         </ul>
     </nav>
 </header>
