@@ -125,7 +125,7 @@ function getTheme(){
 //Recupere tous les news
 function getNews(){
     $pdo = creeConnexion();
-    $statement = $pdo->prepare("SELECT * FROM News;");
+    $statement = $pdo->prepare("SELECT * FROM News ORDER BY datenews DESC;");
     $statement->execute();
     while($row = $statement->fetch(PDO::FETCH_ASSOC)){
         $idnews = $row['idnews'];
@@ -139,6 +139,98 @@ function getNews(){
     }
     return $table;
 }
+/*###############################################   Recherche   ###############################################*/
+
+//recherche une news contenant dans le titre une partie de ce que l'utilisateur a rentrer dans sa recherche
+function rechercheByTitre($titre){
+    $pdo = creeConnexion();
+    $statement = $pdo->prepare("SELECT * FROM News WHERE titrenews LIKE '%?%' ORDER BY datenews DESC;");
+    $statement->execute([$titre]);
+    while($row = $statement->fetch(PDO::FETCH_ASSOC)){
+        $idnews = $row['idnews'];
+        $idtheme = $row['idtheme'];
+        $titrenews = $row['titrenews'];
+        $datenews = $row['datenews'];
+        $textenews = $row['textenews'];
+        $idredacteur = $row['idredacteur'];
+        $news = new News($idnews,$idtheme, $titrenews, $datenews, $textenews, $idredacteur);
+        $table[] = $news;
+    }
+    return $table;
+}
+//recherche une news à partir d'une date choisie
+function rechercheByDateDebut($dateDebut){
+    $pdo = creeConnexion();
+    $statement = $pdo->prepare(" SELECT * FROM News WHERE datenews >= ? ORDER BY datenews DESC;");
+    $statement->execute([$dateDebut]);
+    while($row = $statement->fetch(PDO::FETCH_ASSOC)){
+        $idnews = $row['idnews'];
+        $idtheme = $row['idtheme'];
+        $titrenews = $row['titrenews'];
+        $datenews = $row['datenews'];
+        $textenews = $row['textenews'];
+        $idredacteur = $row['idredacteur'];
+        $news = new News($idnews,$idtheme, $titrenews, $datenews, $textenews, $idredacteur);
+        $table[] = $news;
+    }
+    return $table;
+}
+
+//recherche une news à partir d'une date de fin choisie
+function rechercheByDateFin($dateFin){
+    $pdo = creeConnexion();
+    $statement = $pdo->prepare(" SELECT * FROM News WHERE datenews <= ? ORDER BY datenews DESC;");
+    $statement->execute([$dateFin]);
+    while($row = $statement->fetch(PDO::FETCH_ASSOC)){
+        $idnews = $row['idnews'];
+        $idtheme = $row['idtheme'];
+        $titrenews = $row['titrenews'];
+        $datenews = $row['datenews'];
+        $textenews = $row['textenews'];
+        $idredacteur = $row['idredacteur'];
+        $news = new News($idnews,$idtheme, $titrenews, $datenews, $textenews, $idredacteur);
+        $table[] = $news;
+    }
+    return $table;
+}
+
+//recherche une news à partir d'une duree choisie
+function rechercheByDuree($dateDebut, $dateFin){
+    $pdo = creeConnexion();
+    $statement = $pdo->prepare(" SELECT * FROM News WHERE datenews >= ? AND datenews <= ? ORDER BY datenews DESC;");
+    $statement->execute([$dateDebut, $dateFin]);
+    while($row = $statement->fetch(PDO::FETCH_ASSOC)){
+        $idnews = $row['idnews'];
+        $idtheme = $row['idtheme'];
+        $titrenews = $row['titrenews'];
+        $datenews = $row['datenews'];
+        $textenews = $row['textenews'];
+        $idredacteur = $row['idredacteur'];
+        $news = new News($idnews,$idtheme, $titrenews, $datenews, $textenews, $idredacteur);
+        $table[] = $news;
+    }
+    return $table;
+}
+
+//recherche une news à partir d'un theme choisie
+function rechercheByTheme($idTheme){
+    $theme = getThemeById($idTheme);
+    $pdo = creeConnexion();
+    $statement = $pdo->prepare(" SELECT * FROM News WHERE idtheme = ? ORDER BY datenews DESC;");
+    $statement->execute([$theme]);
+    while($row = $statement->fetch(PDO::FETCH_ASSOC)){
+        $idnews = $row['idnews'];
+        $idtheme = $row['idtheme'];
+        $titrenews = $row['titrenews'];
+        $datenews = $row['datenews'];
+        $textenews = $row['textenews'];
+        $idredacteur = $row['idredacteur'];
+        $news = new News($idnews,$idtheme, $titrenews, $datenews, $textenews, $idredacteur);
+        $table[] = $news;
+    }
+    return $table;
+}
+
 
 /*###############################################   Autre   ###############################################*/
 //Test si une chaine est vide
@@ -150,4 +242,16 @@ function isEmpty($str){
         return false;
     }
 }
-?>
+
+//Retourne le theme à partir de son id
+function getThemeById($idTheme){
+    $pdo = creeConnexion();
+    $statement = $pdo->prepare("SELECT * FROM Theme WHERE idtheme = ?;");
+    $statement->execute([$idTheme]);
+    while($row = $statement->fetch(PDO::FETCH_ASSOC)){
+        $idtheme = $row['idtheme'];
+        $description = $row['description'];
+        $theme = new Theme($idtheme, $description);
+    }
+    return $theme;
+}

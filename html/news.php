@@ -45,7 +45,7 @@
                     <?php affichageTheme(); ?>
                 </select>
                 <br/>
-                <input type="submit" name="Rechercher" value="Rechercher" onsubmit="">
+                <button class="boutonRecherche" type="submit" name="Rechercher" onsubmit=""><span>Rechercher</span></button>
             </form>
             </div>
         </div>
