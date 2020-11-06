@@ -18,7 +18,7 @@
     <script type="text/javascript" src="../javascript/ScriptRedaction.js"></script>
 </head>
 <header>
-    <h1 id="titre">HK News</h1>
+    <h1 id="titre"><a href='accueil.php'>HK News</a></h1>
     <nav>
         <ul id="menu">
             <li><a href="accueil.php" class="souligne elmtMenu">Accueil</a></li>
