@@ -168,11 +168,10 @@ function adminNews($idnews){
     try{
         //Si une session est deja demarré alors je peux directement récupérer le login de la session en cours
         $email = $_SESSION['login'];
-        var_dump($email);
         if($email == "admin@admin.com"){
             echo "
                 <footer>
-                    <a href='' onclick='return modifierNews(".$idnews.")>Modifer</a>
+                    <a href='' onclick='return modifierNews(".$idnews.");'>Modifer</a>
                     <a href='' onclick='return supprimerNews(".$idnews.");'>Supprimer</a>
                 </footer>
             ";
