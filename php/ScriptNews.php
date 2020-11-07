@@ -138,48 +138,30 @@ function creeNews($idtheme, $titrenews, $datenews, $textenews){
 function afficheNews(){
     try{
         $table = getNews();
-        foreach($table as $news){
-            $idnews = $news->getIdnews();
-            $titrenews = $news->getTitrenews();
-            $datenews = $news->getDatenews();
-            $idredacteur = $news->getIdredacteur();
-            $redacteur = getRedacteurById($idredacteur);
-            $nom = $redacteur->getNom();
-            $prenom = $redacteur->getPrenom();
-            $textenews = $news->getTextenews();
-            echo "
-                <article class='articleNews' id=".$idnews.">
-                    <h1>".$titrenews."</h1>
-                    <h2>Par: ".$nom." ".$prenom." - ".$datenews."</h2>
-                    <p>".$textenews."</p>
-                    <a class='souligne btnEnSavoirPlus' href='###'>en savoir plus...</a>
+        if($table != null){
+            foreach($table as $news){
+                $idnews = $news->getIdnews();
+                $titrenews = $news->getTitrenews();
+                $datenews = $news->getDatenews();
+                $idredacteur = $news->getIdredacteur();
+                $redacteur = getRedacteurById($idredacteur);
+                $nom = $redacteur->getNom();
+                $prenom = $redacteur->getPrenom();
+                $textenews = $news->getTextenews();
+                echo "
+                    <article class='articleNews' id=".$idnews.">
+                        <h1>".$titrenews."</h1>
+                        <h2>Par: ".$nom." ".$prenom." - ".$datenews."</h2>
+                        <p>".$textenews."</p>
+                    <footer class='footerArticle'>
+                        <a class='souligne btnEnSavoirPlus' href='###'>en savoir plus...</a>
+                    </footer>
+                    </article>
                 ";
-                    adminNews($idnews);
-            echo"
-                </article>
-            ";
+            }
         }
     } catch(Exception $e) {
         echo '<script type="text/javascript"> alert("'.$e->getMessage().'");</script>';
     }
 }
-
-function adminNews($idnews){
-    try{
-        //Si une session est deja demarré alors je peux directement récupérer le login de la session en cours
-        $email = $_SESSION['login'];
-        if($email == "admin@admin.com"){
-            echo "
-            <div class='footerArticle'>
-                <a href='' class='souligne btnFooterArticle' onclick='return modifierNews(".$idnews.");'>Modifer</a>
-                <a href='' class='souligne btnFooterArticle' onclick='return supprimerNews(".$idnews.");'>Supprimer</a>
-            </div>
-        </article>
-            ";
-        }
-    } catch(Exception $e) {
-        echo '<script type="text/javascript"> alert("'.$e->getMessage().'");</script>';
-    }
-}
-
 ?>

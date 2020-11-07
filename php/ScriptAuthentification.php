@@ -55,7 +55,7 @@ function authentification($email, $motDePasse){
             $_SESSION['login'] = $email;
             $_SESSION['pass'] = $motDePasse;
             $_SESSION['etat'] = true;
-            header("Location:http://localhost/projet/akniou_topalovic_projet_web/html/redaction.php");
+            header("Location:http://localhost/projet/akniou_topalovic_projet_web/html/accueil.php");
             exit();
         } else {
             throw new Error("Attention ! L'adresse email ou le mot de passe est incorrect");

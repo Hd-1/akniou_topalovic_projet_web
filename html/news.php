@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <title>Redaction</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <script type="text/javascript" src="../javascript/ScriptRecherche.js"></script>
     <script type="text/javascript" src="../javascript/ScriptCalendrier.js"></script>
     <?php 
         session_start();

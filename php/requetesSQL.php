@@ -108,7 +108,7 @@ function insertNews($news){
 }
 
 //Recupere tous les themes
-function getTheme(){ 
+function getTheme(){
     $pdo = creeConnexion();
     $statement = $pdo->prepare("SELECT * FROM Theme;");
     $statement->execute();
@@ -118,14 +118,19 @@ function getTheme(){
         $theme = new Theme($idtheme, $description);
         $table[] = $theme;
     }
+    if($table != null){
+        return $table;
+    } else {
+        return null;
+    }
     
-    return $table;
 }
 
 //Recupere tous les news
 function getNews(){
+    $table = null;
     $pdo = creeConnexion();
-    $statement = $pdo->prepare("SELECT * FROM News ORDER BY datenews DESC;");
+    $statement = $pdo->prepare("SELECT * FROM News ;");
     $statement->execute();
     while($row = $statement->fetch(PDO::FETCH_ASSOC)){
         $idnews = $row['idnews'];
@@ -137,7 +142,11 @@ function getNews(){
         $news = new News($idnews,$idtheme, $titrenews, $datenews, $textenews, $idredacteur);
         $table[] = $news;
     }
-    return $table;
+    if($table != null){
+        return $table;
+    } else {
+        return null;
+    }
 }
 
 //Retourne le theme à partir de son id
@@ -151,6 +160,30 @@ function getThemeById($idTheme){
         $theme = new Theme($idtheme, $description);
     }
     return $theme;
+}
+
+//Supprime une news grace a l'id
+function deleteNews($idnews){
+    $pdo = creeConnexion();
+    $statement = $pdo->prepare("DELETE FROM News WHERE idnews=?;");
+    return $statement->execute([$idnews]);
+}
+
+//Recupere une news grace a un id
+function getNewsById($idnews){
+    $pdo = creeConnexion();
+    $statement = $pdo->prepare("SELECT * FROM News WHERE idnews = ?;");
+    $statement->execute([$idnews]);
+    while($row = $statement->fetch(PDO::FETCH_ASSOC)){
+        $idnews = $row['idnews'];
+        $idtheme = $row['idtheme'];
+        $titrenews = $row['titrenews'];
+        $datenews = $row['datenews'];
+        $textenews = $row['textenews'];
+        $idredacteur = $row['idredacteur'];
+        $news = new News($idnews,$idtheme, $titrenews, $datenews, $textenews, $idredacteur);
+    }
+    return $news;
 }
 
 /*###############################################   Recherche   ###############################################*/
@@ -243,14 +276,6 @@ function rechercheByTheme($idTheme){
         $table[] = $news;
     }
     return $table;
-}
-
-
-//Supprime une news news grace a l'id
-function deleteNews($idnews){
-    $pdo = creeConnexion();
-    $statement = $pdo->prepare("DELETE FROM News WHERE idnews=?;");
-    return $statement->execute([$idnews]);
 }
 
 /*###############################################   Autre   ###############################################*/
