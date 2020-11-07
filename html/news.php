@@ -23,7 +23,7 @@
         </ul>
     </nav>
 </header>
-<body>
+<body aria-autocomplete="off">
     <div class="divFlexCol recherche">
         <div class="divFlexRow divColElt" id="divNomPrenom">
             <form method="post" action="news.php">
@@ -49,26 +49,26 @@
             </form>
         </div>
     </div>
-    <?php if(!isset($_POST['rechercher'])){
+    <?php 
+        if(!isset($_POST['rechercher'])){
         afficheNews();}
         else if(isset($_POST['rechercher'])){
-            if((isset($_POST['rechTitre']))||(isset($_POST['date1']))||(isset($_POST['date2']))){
+            if((isset($_POST['rechTitre']))||(isset($_POST['date1']))||(isset($_POST['date2']) || (isset($_POST['rechTheme'])))){
                 $table = null;
-                if(isset($_POST['rechTitre'])){
+                if(trim($_POST['rechTitre'])!= ""){
                     $titrenews = $_POST['rechTitre'];
                     $table = filtreTitre($titrenews);
-                } else if(isset($_POST['date1']) && isset($_POST['date2'])) {
+                } else if((trim($_POST['date1']) != "") && (trim($_POST['date2'])) != ""){
                     $dateDeb = $_POST['date1'];
                     $dateFin = $_POST['date2'];
                     $table = filtreDuree($dateDeb, $dateFin);
-                } else if(isset($_POST['date1'])) {
+                } else if(trim($_POST['date1'])!= "") {
                     $dateDeb = $_POST['date1'];
                     $table = filtreDateDeb($dateDeb);
-                } else if(isset($_POST['date2'])) {
+                } else if(trim($_POST['date2'])!= "") {
                     $dateFin = $_POST['date2'];
                     $table = filtreDateFin($dateFin);
-                } else if(isset($_POST['rechTheme'])){
-                    echo'test2';
+                } else if(trim($_POST['rechTheme'])!= ""){
                     $idtheme = $_POST['rechTheme'];
                     $table = filtreTheme($idtheme);
                 }

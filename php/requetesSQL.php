@@ -279,7 +279,7 @@ function rechercheByDateDebut($dateDebut){
     if($table != null){
         return $table;
     } else {
-        return null;
+        return $table = "";
     }
 }
 
@@ -287,7 +287,7 @@ function rechercheByDateDebut($dateDebut){
 function rechercheByDateFin($dateFin){
     $table = null;
     $pdo = creeConnexion();
-    $statement = $pdo->prepare(" SELECT * FROM News WHERE datenews < ? ORDER BY datenews DESC;");
+    $statement = $pdo->prepare(" SELECT * FROM News WHERE datenews <= ? ORDER BY datenews DESC;");
     $statement->execute([$dateFin]);
     while($row = $statement->fetch(PDO::FETCH_ASSOC)){
         $idnews = $row['idnews'];
@@ -302,7 +302,7 @@ function rechercheByDateFin($dateFin){
     if($table != null){
         return $table;
     } else {
-        return null;
+        return $table = "";
     }
 }
 
@@ -325,7 +325,7 @@ function rechercheByDuree($dateDebut, $dateFin){
     if($table != null){
         return $table;
     } else {
-        return null;
+        return $table = "";
     }
 }
 

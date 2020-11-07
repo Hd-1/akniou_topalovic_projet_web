@@ -141,26 +141,30 @@ function afficheNews($table = null){
             $table = getNews();
         }
         if($table != null){
-            foreach($table as $news){
-                $idnews = $news->getIdnews();
-                $titrenews = $news->getTitrenews();
-                $datenews = $news->getDatenews();
-                $idredacteur = $news->getIdredacteur();
-                $redacteur = getRedacteurById($idredacteur);
-                $nom = $redacteur->getNom();
-                $prenom = $redacteur->getPrenom();
-                $textenews = $news->getTextenews();
-                echo "
-                    <div class='articleNews marginCotesAuto' id=".$idnews.">
-                        <h1>".$titrenews."</h1>
-                        <h2>Par: ".$nom." ".$prenom." - ".$datenews."</h2>
-                        <p>".$textenews."</p>
-                    <div class='footerArticle'>
-                        <p id='idNewsFooter'> News n°".$idnews."</p>
-                    </div>
-                    </div>
-                ";
+            if($table != "vide"){
+                foreach($table as $news){
+                    $idnews = $news->getIdnews();
+                    $titrenews = $news->getTitrenews();
+                    $datenews = $news->getDatenews();
+                    $idredacteur = $news->getIdredacteur();
+                    $redacteur = getRedacteurById($idredacteur);
+                    $nom = $redacteur->getNom();
+                    $prenom = $redacteur->getPrenom();
+                    $textenews = $news->getTextenews();
+                    echo "
+                        <div class='articleNews marginCotesAuto' id=".$idnews.">
+                            <h1>".$titrenews."</h1>
+                            <h2>Par: ".$nom." ".$prenom." - ".$datenews."</h2>
+                            <p>".$textenews."</p>
+                        <div class='footerArticle'>
+                            <p id='idNewsFooter'> News n°".$idnews."</p>
+                        </div>
+                        </div>
+                    ";
+                }
             }
+        } else if($table == "vide"){
+            echo "qsdqd";
         }
     } catch(Exception $e) {
         echo '<script type="text/javascript"> alert("'.$e->getMessage().'");</script>';
@@ -249,6 +253,8 @@ function filtreTitre($titrenews){
         $table = rechercheByTitre($titrenews);
         if($table != null){
             return $table;
+        }else {
+            $table = "vide";
         }
     } catch(Exception $e) {
 
@@ -260,6 +266,8 @@ function filtreDuree($dateDeb, $dateFin){
         $table = rechercheByDuree($dateDeb, $dateFin);
         if($table != null){
             return $table;
+        }else {
+            return $table = "vide";
         }
     } catch(Exception $e) {
 
@@ -271,6 +279,8 @@ function filtreDateDeb($dateDeb){
         $table = rechercheByDateDebut($dateDeb);
         if($table != null){
             return $table;
+        } else {
+            return $table = "vide";
         }
     } catch(Exception $e) {
 
@@ -282,6 +292,8 @@ function filtreDateFin($dateFin){
         $table = rechercheByDateFin($dateFin);
         if($table != null){
             return $table;
+        }else {
+            return $table = "vide";
         }
     } catch(Exception $e) {
 
@@ -293,6 +305,8 @@ function filtreTheme($idtheme){
         $table = rechercheByIdTheme($idtheme);
         if($table != null){
             return $table;
+        }else {
+            return $table = "vide";
         }
     } catch(Exception $e) {
 

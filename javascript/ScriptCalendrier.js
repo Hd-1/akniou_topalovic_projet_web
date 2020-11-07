@@ -74,11 +74,11 @@ function calClick(dateStr, id){
 		}
 	}
 	if(jsSDPObj[id] == undefined) return 0;
-	var dateArr = dateStr.split('/');
+	var dateArr = dateStr.split('-');
 	if(parseInt(dateArr[0], 10)<10) dateArr[0] = '0'+dateArr[0];
 	if(parseInt(dateArr[1], 10)<10) dateArr[1] = '0'+dateArr[1];
 	field = document.getElementById(jsSDPObj[id][1]);
-	field.value = dateArr[0]+'/'+dateArr[1]+'/'+dateArr[2];
+	field.value = dateArr[0]+'-'+dateArr[1]+'-'+dateArr[2];
 	document.getElementById('calendarWrap'+id).style.display = "none";
 }
 
@@ -103,7 +103,7 @@ function jsSimpleDatePickr(id){
     me.funcDateClic = me.classTable = me.classTd = me.classSelection = '';
     me.setDate = function(dateStr){
         if(!dateStr) return 0;
-        var dateArr = dateStr.split('/');
+        var dateArr = dateStr.split('-');
         if(isNaN(dateArr[0])) return 0;
         today = new Date();
         if(isNaN(dateArr[1])) dateArr[1] = today.getMonth();
@@ -144,7 +144,7 @@ function jsSimpleDatePickr(id){
                 nb = 1;
                 h += '</tr><tr>';
             }
-            h += '<td class="'+(i==today ? me.classSelection:me.classTd)+'"><a href="#"'+(me.funcDateClic!='' ? ' onclick="'+me.funcDateClic+'(\''+i+'/'+(month+1)+'/'+year+'\', \''+me.id+'\');return false;"':'')+'>'+i+'</a></td>';
+            h += '<td class="'+(i==today ? me.classSelection:me.classTd)+'"><a href="#"'+(me.funcDateClic!='' ? ' onclick="'+me.funcDateClic+'(\''+year+'-'+(month+1)+'-'+i+'\', \''+me.id+'\');return false;"':'')+'>'+i+'</a></td>';
         }
         for(i=nb; i<7; i++){
             h += '<td> </td>';
