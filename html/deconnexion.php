@@ -15,7 +15,6 @@
     ?>
 </head>
 <header class="noMargin">
-<?php boutonAdmin(); ?> 
     <h1 id="titre"><a href='accueil.php'>HK News</a></h1>
 	<nav>
         <ul id="menu">
