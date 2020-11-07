@@ -23,6 +23,7 @@
     <h1 id="titre"><a href='accueil.php'>HK News</a></h1>
 	<nav>
 		<ul id="menu">
+            <?php boutonAdmin(); ?> 
 			<li><a href="accueil.php" class="souligne elmtMenu" >Accueil</a></li>
 			<li><a href="news.php" class="souligne elmtMenu">News</a></li>
 			<li><a href="redaction.php" class="souligne elmtMenu">Rédiger une news</a></li>
