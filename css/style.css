@@ -24,7 +24,15 @@ header a{
 	font-weight:bold;
 	margin: 0;
 	padding: 20px;
-	background-color: #b5ebfb;
+	background-color: #fbc988;
+	
+}
+
+#divAdmin{
+	position: absolute;
+	margin-top: 10px;
+	margin-right: 10px;
+	right: 5px;
 }
 /*===========================================================
                         	  	MENU
@@ -455,7 +463,6 @@ body{
 	margin: 0;
 }
 
-
 .bouton{
 	border-radius: 4px;
 	background-color: #f4511e;
@@ -469,24 +476,33 @@ body{
 	cursor: pointer;
 	margin: 5px;
 }
+
 .bouton span{
 	cursor: pointer;
   	display: inline-block;
   	position: relative;
   	transition: 0.5s;
-  }
-  .bouton span:after{
+}
+
+.bouton span:after{
 	content: '\00bb';
 	position: absolute;
 	opacity: 0;
 	top: 0;
 	right: -20px;
 	transition: 0.5s;
-  }
-  .bouton:hover span {
+}
+
+.bouton:hover span {
 	padding-right: 25px;
-  }
-  .bouton:hover span:after {
+}
+
+.bouton:hover span:after {
 	opacity: 1;
 	right: 0;
-  }
+}
+
+.marginCotesAuto{
+	margin-left: auto;
+	margin-right: auto;
+}

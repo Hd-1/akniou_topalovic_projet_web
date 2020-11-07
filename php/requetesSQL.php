@@ -187,6 +187,18 @@ function getNewsById($idnews){
     return $news;
 }
 
+//Modifie une news
+function updateNews($news){
+    $idnews = $news->getIdnews();
+    $idtheme = $news->getIdtheme();
+    $titrenews = $news->getTitrenews();
+    $datenews = $news->getDatenews();
+    $textenews = $news->getTextenews();
+    $pdo = creeConnexion();
+    $statement = $pdo->prepare("UPDATE News SET idtheme=?, titrenews=?, datenews=?, textenews=? WHERE idnews=?");
+    return $statement->execute([$idtheme, $titrenews, $datenews, $textenews, $idnews]);
+}
+
 /*###############################################   Recherche   ###############################################*/
 
 //recherche une news contenant dans le titre une partie de ce que l'utilisateur a rentrer dans sa recherche
@@ -297,5 +309,4 @@ function testBoutonDeco() {
         echo '<li><a href="authentification.php" class="souligne elmtMenu">Connexion</a></li>';
     }
 }
-
 ?>

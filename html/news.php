@@ -8,10 +8,14 @@
     <?php 
         session_start();
         include_once('../php/ScriptNews.php');
+        if(isset($_POST['admin'])){
+            header("Location:http://localhost/projet/akniou_topalovic_projet_web/html/admin.php");
+        }
     ?>
 </head>
 <header>
-    <h1 id="titre"><a href='accueil.php'>HK News</a></h1>
+    <?php boutonAdmin(); ?> 
+    <div><h1 id="titre"><a class='marginCotesAuto' href='accueil.php'>HK News</a></h1></div>
     <nav>
         <ul id="menu">
             <li><a href="accueil.php" class="souligne elmtMenu" >Accueil</a></li>
@@ -25,7 +29,6 @@
 <body>
     <div class="divFlexCol recherche">
         <div class="divFlexRow divColElt" id="divNomPrenom">
-            <div class="divRowElt">
             <form method="post">
                 <input type="text" name="recherche" placeholder="Recherche dans le titre..." id="recherche" size="45" >
                 <br/><br/>
@@ -47,7 +50,6 @@
                 <br/>
                 <button class="bouton" type="submit" name="Rechercher" onsubmit=""><span>Rechercher</span></button>
             </form>
-            </div>
         </div>
     </div>
     <section id="sectionArticle">
