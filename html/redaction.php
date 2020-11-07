@@ -31,10 +31,8 @@
     </nav>
 </header>
 <body>
-    <div id="divAuth">
-    <p>
-        Redaction
-    </p>
+    <div id="divRedaction">
+        <h1>Redaction</h1>
     <form method="post">
         <div class="divFlexCol">
             <div class="divFlexRow divColElt" id="divNomPrenom">
@@ -50,7 +48,7 @@
                     <span id="caracteresRedaction">5000</span> caractères restants
                 </div>
             </div>
-                <td><input type="submit" name="valider" value="Terminer" ></td>
+                <td><button type="submit" class="bouton" name="valider"><span>Terminer</span></button></td>
             <div>
         </div>
     </form>
