@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Redaction</title>
+    <title>News</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <script type="text/javascript" src="../javascript/ScriptCalendrier.js"></script>
     <?php 
@@ -52,6 +52,4 @@
             </form>
         </div>
     </div>
-    <section id="sectionArticle">
         <?php afficheNews(); ?>
-    </section>

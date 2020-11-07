@@ -51,9 +51,9 @@
                 <button type="submit" class="bouton" name="valider"><span>Terminer</span></button>
     </form>
     </div>
-    <section id="sectionArticle">
+    <div id="sectionArticle">
         <h1 id="titreVosArticlesRedac">Vos Articles</h1>
         <?php afficheNews(); ?>
-    </section>
+    </div>
 </body>
 </html>

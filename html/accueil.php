@@ -23,14 +23,12 @@
     </nav>
 </header>
 <body>
-<section id="sectionArticle">
-    <article id="articleIntro">
+    <div id="articleIntro">
         <p>Ceci est l'intro</p>
         <img id="image0" src="./images/0.png" />
         <img id="image1" src="./images/1.png" />
         <img id="image2" src="./images/2.png" />
         <img id="image3" src="./images/3.png" />
-    </article>
+    </div>
         <?php afficheNewsAccueil(); ?>
-    </section>
 </section>

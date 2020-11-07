@@ -149,14 +149,14 @@ function afficheNews(){
                 $prenom = $redacteur->getPrenom();
                 $textenews = $news->getTextenews();
                 echo "
-                    <article class='articleNews' id=".$idnews.">
+                    <div class='articleNews marginCotesAuto' id=".$idnews.">
                         <h1>".$titrenews."</h1>
                         <h2>Par: ".$nom." ".$prenom." - ".$datenews."</h2>
                         <p>".$textenews."</p>
-                    <footer class='footerArticle'>
+                    <div class='footerArticle'>
                         <a class='souligne btnEnSavoirPlus' href='###'>en savoir plus...</a>
-                    </footer>
-                    </article>
+                    </div>
+                    </div>
                 ";
             }
         }
@@ -180,14 +180,14 @@ function afficheNewsAccueil(){
                 $textenews = $news->getTextenews();
                 for($i=0;$i<6;$i++){
                 echo "
-                    <article class='articleNews' id=".$idnews.">
+                    <div class='articleNews marginCotesAuto' id=".$idnews.">
                         <h1>".$titrenews."</h1>
                         <h2>Par: ".$nom." ".$prenom." - ".$datenews."</h2>
                         <p>".$textenews."</p>
-                    <footer class='footerArticle'>
+                    <div class='footerArticle'>
                         <a class='souligne btnEnSavoirPlus' href='###'>en savoir plus...</a>
-                    </footer>
-                    </article>
+                    </div>
+                    </div>
                 ";
             }
             }

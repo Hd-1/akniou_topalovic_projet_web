@@ -7,7 +7,7 @@
 header{
     text-align: center;
 	padding:0;
-	background-color:rgb(190, 200, 255) ;
+	background-color: rgba(244, 081, 030, 0.7) ;
 	font-variant: small-caps;
 }
 
@@ -177,9 +177,6 @@ body{
 /*===========================================================
                         Section & Article
 ===========================================================*/
-#sectionArticle{
-	margin: 0;
-}
 
 #articleIntro{
 	background-color: rgba(247, 223, 211, 0.8);;
@@ -217,8 +214,6 @@ body{
 	max-width: 40%;
 	max-height: 800px;
 	width: 40%;
-	margin-right: auto;
-	margin-left: auto;
 	border: 1px black solid;
 	margin: 2% 5% 2% 5%;
 	text-align: justify;
@@ -417,6 +412,15 @@ body{
 #divAuth{
 	width: 270px;
 	margin: 100px auto auto auto;
+}
+
+#divAuth input[type=text]{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+#divAuth input[type=password]{
+	margin: 5px;
 }
 
 #btnCompte{
