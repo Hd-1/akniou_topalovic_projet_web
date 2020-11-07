@@ -135,9 +135,11 @@ function creeNews($idtheme, $titrenews, $datenews, $textenews){
     }
 }
 
-function afficheNews(){
+function afficheNews($table = null){
     try{
-        $table = getNews();
+        if($table == null){
+            $table = getNews();
+        }
         if($table != null){
             foreach($table as $news){
                 $idnews = $news->getIdnews();
@@ -203,6 +205,61 @@ function boutonAdmin(){
                 <div id="divAdmin"><a href="admin.php"><button type="submit" class="bouton" name="admin"><span>Admin</span></button></a></div>
             ';
         }
+    }
+}
+
+function filtreTitre($titrenews){
+    try{
+        $table = rechercheByTitre($titrenews);
+        if($table != null){
+            return $table;
+        }
+    } catch(Exception $e) {
+
+    }
+}
+
+function filtreDuree($dateDeb, $dateFin){
+    try{
+        $table = rechercheByDuree($dateDeb, $dateFin);
+        if($table != null){
+            return $table;
+        }
+    } catch(Exception $e) {
+
+    }
+}
+
+function filtreDateDeb($dateDeb){
+    try{
+        $table = rechercheByDateDebut($dateDeb);
+        if($table != null){
+            return $table;
+        }
+    } catch(Exception $e) {
+
+    }
+}
+
+function filtreDateFin($dateFin){
+    try{
+        $table = rechercheByDateFin($dateFin);
+        if($table != null){
+            return $table;
+        }
+    } catch(Exception $e) {
+
+    }
+}
+
+function filtreTheme($idtheme){
+    try{
+        $table = rechercheByIdTheme($idtheme);
+        if($table != null){
+            return $table;
+        }
+    } catch(Exception $e) {
+
     }
 }
 ?>

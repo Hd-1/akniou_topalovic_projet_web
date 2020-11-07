@@ -208,6 +208,7 @@ function updateNews($news){
 
 //recherche une news contenant dans le titre une partie de ce que l'utilisateur a rentrer dans sa recherche
 function rechercheByTitre($titre){
+    $table = null;
     $pdo = creeConnexion();
     $statement = $pdo->prepare("SELECT * FROM News WHERE titrenews LIKE '%?%' ORDER BY datenews DESC;");
     $statement->execute([$titre]);
@@ -221,10 +222,15 @@ function rechercheByTitre($titre){
         $news = new News($idnews,$idtheme, $titrenews, $datenews, $textenews, $idredacteur);
         $table[] = $news;
     }
-    return $table;
+    if($table != null){
+        return $table;
+    } else {
+        return null;
+    }
 }
 //recherche une news à partir d'une date choisie
 function rechercheByDateDebut($dateDebut){
+    $table = null;
     $pdo = creeConnexion();
     $statement = $pdo->prepare(" SELECT * FROM News WHERE datenews >= ? ORDER BY datenews DESC;");
     $statement->execute([$dateDebut]);
@@ -238,13 +244,18 @@ function rechercheByDateDebut($dateDebut){
         $news = new News($idnews,$idtheme, $titrenews, $datenews, $textenews, $idredacteur);
         $table[] = $news;
     }
-    return $table;
+    if($table != null){
+        return $table;
+    } else {
+        return null;
+    }
 }
 
 //recherche une news à partir d'une date de fin choisie
 function rechercheByDateFin($dateFin){
+    $table = null;
     $pdo = creeConnexion();
-    $statement = $pdo->prepare(" SELECT * FROM News WHERE datenews <= ? ORDER BY datenews DESC;");
+    $statement = $pdo->prepare(" SELECT * FROM News WHERE datenews < ? ORDER BY datenews DESC;");
     $statement->execute([$dateFin]);
     while($row = $statement->fetch(PDO::FETCH_ASSOC)){
         $idnews = $row['idnews'];
@@ -256,13 +267,18 @@ function rechercheByDateFin($dateFin){
         $news = new News($idnews,$idtheme, $titrenews, $datenews, $textenews, $idredacteur);
         $table[] = $news;
     }
-    return $table;
+    if($table != null){
+        return $table;
+    } else {
+        return null;
+    }
 }
 
 //recherche une news à partir d'une duree choisie
 function rechercheByDuree($dateDebut, $dateFin){
+    $table = null;
     $pdo = creeConnexion();
-    $statement = $pdo->prepare(" SELECT * FROM News WHERE datenews >= ? AND datenews <= ? ORDER BY datenews DESC;");
+    $statement = $pdo->prepare("SELECT * FROM News WHERE datenews >= ? AND datenews < ? ORDER BY datenews DESC;");
     $statement->execute([$dateDebut, $dateFin]);
     while($row = $statement->fetch(PDO::FETCH_ASSOC)){
         $idnews = $row['idnews'];
@@ -274,15 +290,19 @@ function rechercheByDuree($dateDebut, $dateFin){
         $news = new News($idnews,$idtheme, $titrenews, $datenews, $textenews, $idredacteur);
         $table[] = $news;
     }
-    return $table;
+    if($table != null){
+        return $table;
+    } else {
+        return null;
+    }
 }
 
 //recherche une news à partir d'un theme choisie
-function rechercheByTheme($idTheme){
-    $theme = getThemeById($idTheme);
+function rechercheByIdTheme($idtheme){
+    $table = null;
     $pdo = creeConnexion();
     $statement = $pdo->prepare(" SELECT * FROM News WHERE idtheme = ? ORDER BY datenews DESC;");
-    $statement->execute([$theme]);
+    $statement->execute([$idtheme]);
     while($row = $statement->fetch(PDO::FETCH_ASSOC)){
         $idnews = $row['idnews'];
         $idtheme = $row['idtheme'];
@@ -293,7 +313,11 @@ function rechercheByTheme($idTheme){
         $news = new News($idnews,$idtheme, $titrenews, $datenews, $textenews, $idredacteur);
         $table[] = $news;
     }
-    return $table;
+    if($table != null){
+        return $table;
+    } else {
+        return null;
+    }
 }
 
 /*###############################################   Autre   ###############################################*/
