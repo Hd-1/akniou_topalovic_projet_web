@@ -109,7 +109,7 @@ body{
 	margin: 0;
 	padding: 0;
 	width: 100%;
-	background-color: #b5ebfb;
+	background-image: url("../html/images/imageDeFond.jpg");
 }
 
 *{
@@ -170,7 +170,6 @@ body{
                         Section & Article
 ===========================================================*/
 #sectionArticle{
-	background-color: #CCE4F7;
 	margin: 0;
 }
 
@@ -193,6 +192,7 @@ body{
 	margin: 0;
 	font-size: 28px;
 	border: 2px 2px 0 2px black solid;
+	padding-left: 10px;
 }
 
 .articleNews h2{
@@ -201,6 +201,7 @@ body{
 	text-align: right;
 	font-size: 16px;
 	border-bottom: 2px solid black;
+	padding-right: 10px;
 }
 
 .articleNews{
@@ -210,9 +211,7 @@ body{
 	width: 40%;
 	margin-right: auto;
 	margin-left: auto;
-	border: 2px black solid;
-	display: block;
-	float: left;
+	border: 1px black solid;
 	margin: 2% 5% 2% 5%;
 	text-align: justify;
 }
@@ -321,7 +320,6 @@ body{
     width: 230px;
     padding: 5px 10px 10px 10px;
     background-color: #2e373f;
-    /*background-color: rgba(46, 55, 63, 0.95);*/
     border-radius: 10px;
     -moz-box-shadow: 0 0 10px #555;
     -webkit-box-shadow: 0 0 10px #555;
@@ -400,7 +398,31 @@ body{
     background-color: #c44d38;
     border-color: #c44d38;
 }
-/* FIN calendrier JS : jsSimpleDatePickr */
+
+/*===========================================================
+                        Contact
+===========================================================*/
+.contactStyle{
+	background-color: wheat;
+	border: #2e373f solid 1px;
+	margin-top: 50px;
+}
+
+.contactStyle legend{
+	border: black solid 1px;
+	padding: 5px;
+}
+
+.contactStyle fieldset{
+	margin: 20px;
+	padding: 20px;
+	width: 500px;
+	margin-left: 35%;
+}
+
+.contactStyle button{
+	margin-left: 870px;
+}
 /*===========================================================
                         Authentification
 ===========================================================*/

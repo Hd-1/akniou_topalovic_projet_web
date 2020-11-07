@@ -48,7 +48,7 @@
                     <br/><br/>
                 </div>
             </div>
-                <td><button type="submit" class="bouton" name="valider"><span>Terminer</span></button></td>
+                <button type="submit" class="bouton" name="valider"><span>Terminer</span></button>
     </form>
     </div>
     <section id="sectionArticle">

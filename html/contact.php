@@ -30,18 +30,19 @@
     </nav>
 </header>
 <body>
-<form id="contact" method="post">
-	<fieldset><legend>Vos coordonnées</legend>
-		<p>Nom :<input type="text" id="nom" name="nom"></p>
-		<p>Email :<input type="text" id="email" name="email"></p>
-	</fieldset>
- 
-	<fieldset><legend>Votre message :</legend>
-		<p>Objet :<input type="text" id="objet" name="objet"></p>
-		<p>Message :<br/><textarea id="message" name="message" cols="30" rows="8"></textarea></p>
-	</fieldset>
- 
-	<div style="text-align:center;"><input type="submit" name="envoi" value="Envoyer le formulaire !" /></div>
-</form>
+    <div class="contactStyle">
+        <form id="contact" method="post">
+	        <fieldset>
+                <legend>Vos coordonnées</legend>
+		            <p>Nom :<input type="text" id="nom" name="nom"></p>
+		            <p>Email :<input type="text" id="email" name="email"></p>
+	            </fieldset>
+        	    <fieldset><legend>Votre message </legend>
+	        	    <p>Objet :<input type="text" id="objet" name="objet"></p>
+	        	    <p>Message :<br/><textarea id="message" name="message" cols="60" rows="10"></textarea></p>
+	            </fieldset>
+            <button type="submit" class="bouton" name="valider"><span>Envoyer</span></button>
+    </form>
+</div>
 
 </body>
