@@ -202,17 +202,15 @@ function afficheNewsRedacteur(){
         if(isset($_SESSION['login'])){
             $idredacteur = getIdRedacteurByEmail($_SESSION['login']);
             $table = getNewsByIdRedacteur($idredacteur);
-            
             if($table != null){
-                foreach($table as $news){
-                    var_dump($news);
-                    $idnews = $news->getIdnews();
-                    $titrenews = $news->getTitrenews();
-                    $datenews = $news->getDatenews();
+                foreach($table as $newsTable){
+                    $idnews = $newsTable->getIdnews();
+                    $titrenews = $newsTable->getTitrenews();
+                    $datenews = $newsTable->getDatenews();
                     $redacteur = getRedacteurById($idredacteur);
                     $nom = $redacteur->getNom();
                     $prenom = $redacteur->getPrenom();
-                    $textenews = $news->getTextenews();
+                    $textenews = $newsTable->getTextenews();
                     echo "
                         <div class='articleNews marginCotesAuto' id=".$idnews.">
                             <h1>".$titrenews."</h1>

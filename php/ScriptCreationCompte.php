@@ -34,7 +34,7 @@ function creationCompte($nom, $prenom, $email, $confirmationEmail, $motDePasse, 
         $testEmail = testEmail($email, $confirmationEmail);
         $testMotDePasse = testMotDePasse($motDePasse, $confirmationMotDePasse);
         if($testEmail == true && $testMotDePasse == true){
-            if(testCompteExistant($email)){
+            if(testCompteExistant($email)==true){
                 $compte = new Redacteur(1, $nom, $prenom, $email, $motDePasse);
                 $test = insertCompte($compte);
                 if($test == true){

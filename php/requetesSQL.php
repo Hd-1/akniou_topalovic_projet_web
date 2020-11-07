@@ -203,7 +203,7 @@ function getNewsById($idnews){
 
 //Recupere les news d'un redacteur donné
 function getNewsByIdRedacteur($idredacteur){
-    $news = null;
+    $table = null;
     $pdo = creeConnexion();
     $statement = $pdo->prepare("SELECT * FROM News WHERE idredacteur = ?;");
     $statement->execute([$idredacteur]);
@@ -215,9 +215,10 @@ function getNewsByIdRedacteur($idredacteur){
         $textenews = $row['textenews'];
         $idredacteur = $row['idredacteur'];
         $news = new News($idnews,$idtheme, $titrenews, $datenews, $textenews, $idredacteur);
+        $table[] = $news;
     }
-    if($news != null){
-        return $news;
+    if($table != null){
+        return $table;
     } else {
         return null;
     }
