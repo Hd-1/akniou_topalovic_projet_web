@@ -170,26 +170,30 @@ function afficheNews($table = null){
 function afficheNewsAccueil(){
     try{
         $table = getNews();
+        $i = 0;
         if($table != null){
             foreach($table as $news){
-                $idnews = $news->getIdnews();
-                $titrenews = $news->getTitrenews();
-                $datenews = $news->getDatenews();
-                $idredacteur = $news->getIdredacteur();
-                $redacteur = getRedacteurById($idredacteur);
-                $nom = $redacteur->getNom();
-                $prenom = $redacteur->getPrenom();
-                $textenews = $news->getTextenews();
-                echo "
-                    <div class='articleNews marginCotesAuto' id=".$idnews.">
-                        <h1>".$titrenews."</h1>
-                        <h2>Par: ".$nom." ".$prenom." - ".$datenews."</h2>
-                        <p>".$textenews."</p>
-                    <div class='footerArticle'>
-                        <p id='idNewsFooter'> News n°".$idnews."</p>
-                    </div>
-                    </div>
-                ";
+                if($i<4){
+                    $i++;
+                    $idnews = $news->getIdnews();
+                    $titrenews = $news->getTitrenews();
+                    $datenews = $news->getDatenews();
+                    $idredacteur = $news->getIdredacteur();
+                    $redacteur = getRedacteurById($idredacteur);
+                    $nom = $redacteur->getNom();
+                    $prenom = $redacteur->getPrenom();
+                    $textenews = $news->getTextenews();
+                    echo "
+                        <div class='articleNews marginCotesAuto' id=".$idnews.">
+                            <h1>".$titrenews."</h1>
+                            <h2>Par: ".$nom." ".$prenom." - ".$datenews."</h2>
+                            <p>".$textenews."</p>
+                        <div class='footerArticle'>
+                            <p id='idNewsFooter'> News n°".$idnews."</p>
+                        </div>
+                        </div>
+                    ";
+                }
             }
         }
     } catch(Exception $e) {
