@@ -8,33 +8,6 @@
     <?php 
         session_start();
         include_once('../php/ScriptNews.php');
-
-        if(isset($_POST['rechercher'])){
-            echo('test');
-            if(($_POST['rechTitre']!='')&&($_POST['date1']!='')&&($_POST['date2']!='')){
-                $table = null;
-                if(isset($_POST['rechTitre'])){
-                    $titrenews = $_POST['rechTitre'];
-                    $table = filtreTitre($titrenews);
-                } else if(isset($_POST['date1']) && isset($_POST['date2'])) {
-                    $dateDeb = $_POST['date1'];
-                    $dateFin = $_POST['date2'];
-                    $table = filtreDuree($dateDeb, $dateFin);
-                } else if(isset($_POST['date1'])) {
-                    $dateDeb = $_POST['date1'];
-                    $table = filtreDateDeb($dateDeb);
-                } else if(isset($_POST['date2'])) {
-                    $dateFin = $_POST['date2'];
-                    $table = filtreDateFin($dateFin);
-                } else if(isset($_POST['rechTheme'])){
-                    $idtheme = $_POST['rechTheme'];
-                    var_dump($idtheme);
-                    var_dump($_POST['rechTheme']);
-                    $table = filtreTheme($idtheme);
-                }
-                afficheNews($table);
-            }
-        }
     ?>
 </head>
 <header>
@@ -76,7 +49,34 @@
             </form>
         </div>
     </div>
-    <?php afficheNews() ?>
+    <?php if(!isset($_POST['rechercher'])){
+        afficheNews();}
+        else if(isset($_POST['rechercher'])){
+            if((isset($_POST['rechTitre']))||(isset($_POST['date1']))||(isset($_POST['date2']))){
+                $table = null;
+                if(isset($_POST['rechTitre'])){
+                    $titrenews = $_POST['rechTitre'];
+                    $table = filtreTitre($titrenews);
+                } else if(isset($_POST['date1']) && isset($_POST['date2'])) {
+                    $dateDeb = $_POST['date1'];
+                    $dateFin = $_POST['date2'];
+                    $table = filtreDuree($dateDeb, $dateFin);
+                } else if(isset($_POST['date1'])) {
+                    $dateDeb = $_POST['date1'];
+                    $table = filtreDateDeb($dateDeb);
+                } else if(isset($_POST['date2'])) {
+                    $dateFin = $_POST['date2'];
+                    $table = filtreDateFin($dateFin);
+                } else if(isset($_POST['rechTheme'])){
+                    echo'test2';
+                    $idtheme = $_POST['rechTheme'];
+                    $table = filtreTheme($idtheme);
+                }
+                afficheNews($table);
+            }
+        }
+        
+    ?>
 </body>
 <footer>
     <a href="accueil.php" class="souligne">Accueil</a><br/>
