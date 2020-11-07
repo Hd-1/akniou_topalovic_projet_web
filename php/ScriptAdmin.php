@@ -1,5 +1,4 @@
 <?php 
-
 function testAdmin(){
     if(isset($_SESSION['login'])){
         $email = $_SESSION['login'];
@@ -8,5 +7,4 @@ function testAdmin(){
         }
     }
 }
-
 ?>

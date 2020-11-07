@@ -55,7 +55,7 @@
 <body>
     <div class="divFlexCol recherche">
         <div class="divFlexRow divColElt" id="divNomPrenom">
-            <form method="post">
+            <form method="post" action="news.php">
                 <input type="text" name="rechTitre" placeholder="Recherche dans le titre..." id="recherche" size="45" >
                 <br/><br/>
                <input type="text" placeholder="Date début" value="" name="date1" id="champ_date1" size="12" maxlength="10">
