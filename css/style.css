@@ -126,6 +126,13 @@ body{
 /*===========================================================
                         Accueil
 ===========================================================*/
+
+#articleIntro{
+	background-color: rgba(247, 223, 211, 0.5);;
+	margin: 0;
+	padding-bottom: 50px;
+}
+
 /*DEFILEMENT D'IMAGE SUR LA PAGE D'ACCUEIL*/
 .imageIntroSlide, ol{
 	height: 300px;
@@ -191,6 +198,16 @@ body{
 }
 /*FIN DEFILEMENT D'IMAGE SUR LA PAGE D'ACCUEIL*/
 
+#messageIntro{
+	border: black 5px solid;
+	border-radius: 40px;
+	padding: 25px;
+	width: 1200px;
+	font-size: 18px;
+	margin-top: 50px;
+	background-color: rgba(246, 121, 094, 0.2);
+}
+
 /*===========================================================
                     		FLEX BOX
 ===========================================================*/
@@ -248,19 +265,6 @@ body{
                         Section & Article
 ===========================================================*/
 
-#articleIntro{
-	background-color: rgba(247, 223, 211, 0.8);;
-	margin: 0;
-}
-
-#articleIntro p{
-	margin: 0;
-}
-
-.imgintro{
-	size:500px;
-}
-
 .articleNews h1{
 	background-color: rgba(255, 245, 155, 0.5) ;
 	color: black;
@@ -281,8 +285,6 @@ body{
 
 .articleNews{
 	background-color: rgba(247, 223, 211, 1);
-	max-width: 1000px;
-	max-height: 800px;
 	width: 1000px;
 	border: 1px black solid;
 	margin: 2% 5% 2% 5%;
@@ -292,8 +294,6 @@ body{
 .articleNews p{
 	padding: 5px 15px 5px 15px;
 	word-break: break-all;
-	height: 400px;
-	overflow: hidden;
 }
 
 .footerArticle{
@@ -301,23 +301,6 @@ body{
 	margin: 5px 0;
 	padding: 0;
 	text-align: right;
-}
-
-.btnFooterArticle{
-	text-decoration: none;
-	color: black;
-	font-size: 16px;
-	margin: 0;
-	margin: 10px 15px 0px ;
-}
-
-.btnEnSavoirPlus{
-	text-decoration: none;
-	color: black;
-	font-size: 16px;
-	padding-bottom: 5px;
-	padding-top: 10px;
-	margin-right: 10px;
 }
 
 #titreVosArticlesRedac{
@@ -329,11 +312,9 @@ body{
 }
 
 #idNewsFooter{
-	margin-top: 10px;
-	padding: 0;
+	padding: 5px 15px 0;
 	text-align: left;
 	height: 24px;
-	position: absolute;
 }
 
 /*===========================================================

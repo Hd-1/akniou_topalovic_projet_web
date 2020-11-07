@@ -155,7 +155,6 @@ function afficheNews(){
                         <p>".$textenews."</p>
                     <div class='footerArticle'>
                         <p id='idNewsFooter'> News n°".$idnews."</p>
-                        <a class='souligne btnEnSavoirPlus' href='###'>en savoir plus...</a>
                     </div>
                     </div>
                 ";
@@ -186,7 +185,6 @@ function afficheNewsAccueil(){
                         <p>".$textenews."</p>
                     <div class='footerArticle'>
                         <p id='idNewsFooter'> News n°".$idnews."</p>
-                        <a class='souligne btnEnSavoirPlus' href='###'>en savoir plus...</a>
                     </div>
                     </div>
                 ";

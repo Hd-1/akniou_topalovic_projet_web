@@ -24,7 +24,6 @@
 </header>
 <body>
 <div id="articleIntro">
-        <p>Ceci est l'intro</p>
         <div class=imageIntroSlide>
             <ol>
                 <li>
@@ -49,5 +48,12 @@
                 </li>
             </ol>
         </div>
-    </div>
+        <div id="messageIntro" class="marginCotesAuto">Bienvenue chez HKNews, le premier site de news ouvert à tout le monde. Pour ajouter votre news à notre site vous devrez d'abord créer un compte.
+            Ainsi vous pourrez accéder à la section rédiger une news. Attention à ce que vous mettez les autres utilisateurs pourront report votre news si elle est jugé inapproprié
+            via la section contact. Il suffit de mettre le numéro de la news qui se trouve en bas de l'article en objet et de nous dire en quoi elle est inapproprié. Suite à ça,
+            notre admin pourra la modifer ou la supprimer.
+        </div>
+</div>
+<div>
         <?php afficheNewsAccueil(); ?>
+</div>
