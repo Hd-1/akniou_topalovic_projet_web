@@ -333,7 +333,7 @@ function rechercheByDuree($dateDebut, $dateFin){
 function rechercheByIdTheme($idtheme){
     $table = null;
     $pdo = creeConnexion();
-    $statement = $pdo->prepare(" SELECT * FROM News WHERE idtheme = ? ORDER BY datenews DESC;");
+    $statement = $pdo->prepare("SELECT * FROM News WHERE idtheme = ? ORDER BY datenews DESC;");
     $statement->execute([$idtheme]);
     while($row = $statement->fetch(PDO::FETCH_ASSOC)){
         $idnews = $row['idnews'];
