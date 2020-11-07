@@ -140,21 +140,37 @@ body{
                         	Redaction
 ===========================================================*/
 #divRedaction{
-	width: 270px;
+	width: 1000px;
 	margin: 100px auto auto auto;
+	background-color: wheat;
+	border: #2673cb solid 1px;
 }
 
 #divRedaction h1{
 	background-color: wheat;
+	padding: 5px 10px 5px ;
+	width: 180px;
+	margin: 25px;
+	margin-left: 36%;
+	border: #2e373f solid 2px;
 }
 
+#divRedaction select{
+	width: 200px;
+	margin-left: 15%;
+	margin-bottom: 5px;
+}
+
+.nbrCaractereTitre{
+	margin-left: 42%;
+	margin-top: 0;
+}
 /*===========================================================
                         Section & Article
 ===========================================================*/
 #sectionArticle{
 	background-color: #CCE4F7;
 	margin: 0;
-
 }
 
 #articleIntro{
@@ -189,6 +205,7 @@ body{
 .articleNews{
 	background-color: rgba(247, 223, 211, 1);
 	max-width: 40%;
+	max-height: 100px;
 	width: 40%;
 	margin-right: auto;
 	margin-left: auto;
@@ -201,6 +218,8 @@ body{
 
 .articleNews p{
 	padding: 5px 15px 5px 15px;
+	word-break: break-all;
+	overflow: hidden;
 }
 
 .footerArticle{
@@ -227,16 +246,25 @@ body{
 	margin-right: 10px;
 }
 
+#titreVosArticlesRedac{
+	padding-left: 50%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: wheat;
+	border: #2e373f solid 1px;
+}
+
 /*===========================================================
                         	Recherche
 ===========================================================*/
 .recherche{
 	background-color: rgba(255, 245, 155, 1);
-	width: 50%;
+	width: 100%;
 	margin-top: 50px;
 	margin-left: auto;
 	margin-right: auto;
-	border: #2e373f solid 2px;
+	border-top: #2e373f solid 2px;
+	border-bottom: #2e373f solid 2px;
 	padding: 20px;
 }
 

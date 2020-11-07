@@ -34,25 +34,26 @@
     <div id="divRedaction">
         <h1>Redaction</h1>
     <form method="post">
-        <div class="divFlexCol">
             <div class="divFlexRow divColElt" id="divNomPrenom">
                 <div class="divRowElt">
-                    <input type='text' name='titre' placeholder="Titre" size=50px maxlength="300" onkeyup="resteTitre(this.value);"><br/>
-                    <span id="caracteresTitre">300</span> caractères restants
                     <select name='theme'>
                         <option value="">--Choisir un thème--</option>
                         <?php affichageTheme(); ?>
                     </select>
-                    <br/>
-                    <textarea name="textenews"rows="10" cols="70" placeholder="Ecrire l'article..." maxlength="5000" onkeyup="resteRedaction(this.value);"></textarea><br/>
+                    <input type='text' name='titre' placeholder="Titre" size=50px maxlength="300" onkeyup="resteTitre(this.value);"><br/>
+                    <span id="caracteresTitre">300</span> caractères restants
+                    <br/><br/>
+                    <textarea name="textenews"rows="40" cols="100" placeholder="Ecrire l'article..." maxlength="5000" onkeyup="resteRedaction(this.value);"></textarea><br/>
                     <span id="caracteresRedaction">5000</span> caractères restants
+                    <br/><br/>
                 </div>
             </div>
                 <td><button type="submit" class="bouton" name="valider"><span>Terminer</span></button></td>
-            <div>
-        </div>
     </form>
-</div>
+    </div>
+    <section id="sectionArticle">
+        <h1 id="titreVosArticlesRedac">Vos Articles</h1>
+        <?php afficheNews(); ?>
+    </section>
 </body>
-
 </html>
