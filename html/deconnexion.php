@@ -22,7 +22,7 @@
 			<li><a href="news.php" class="souligne elmtMenu">News</a></li>
 			<li><a href="redaction.php" class="souligne elmtMenu">Rédiger une news</a></li>
             <li><a href="contact.php" class="souligne elmtMenu">Contact</a></li>
-            <li id="boutonDeco"><a href="authentification.php" class="souligne elmtMenu" id="pageActuelle">Deconnexion</a></li>
+            <li id="boutonDeco"><a href="authentification.php" class="souligne elmtMenu" id="pageActuelle">Déconnexion</a></li>
         </ul>
 	</nav>
 </header>
@@ -34,7 +34,7 @@
         <form method="post">
         <div class="divFlexCol">
             <div class="divColElt">
-                <input type="submit" name="deconnexion" value="Se déconnecter">
+                <button type="submit" class="bouton" name="deconnexion"><span>Déconnexion</span></button>
             </div>
         </div>
         </form>
