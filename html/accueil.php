@@ -6,7 +6,6 @@
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <?php
         session_start();
-        include_once('../php/ScriptAccueil.php');
         include_once('../php/ScriptNews.php');
     ?>
 </head>

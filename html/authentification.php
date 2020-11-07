@@ -5,9 +5,7 @@
     <meta charset="utf-8">
     <title>Authentification</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <script type="text/javascript" src="../javascript/ScriptAuthentification.js">
-
-    </script>
+    <script type="text/javascript" src="../javascript/ScriptAuthentification.js"></script>
     <?php
         session_start();
         include_once('../php/ScriptAuthentification.php');
@@ -35,14 +33,14 @@
 <body class="centre noMargin">
     <div class="blackBorder marginBotAuto marginLeftAuto marginRightAuto marginTopAuth bgWhite" id="divAuth">
         <p>
-            Authentification<br>
+            Authentification<br/>
         </p>
         <form method="post">
         <div class="divFlexCol">
             <div class="divColElt">
                 <input type="text" name="email" placeholder="Identifiant">
             </div>
-            <div class="divColElt"v>
+            <div class="divColElt">
                 <input type="password" name="motDePasse" placeholder="Mot de passe">
             </div>
             <div class="divColElt">
@@ -51,11 +49,9 @@
         </div>
         </form>
         <p>
-            Nouveau sur HKNews? <br>
+            Nouveau sur HKNews? <br/>
             <a href="creationCompte.php" class="souligne" id="btnCompte">Créer un compte</a>
         </p>
-    </div>
-    </div>
     </div>
 </body>
 <footer>
