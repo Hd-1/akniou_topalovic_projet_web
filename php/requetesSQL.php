@@ -109,6 +109,7 @@ function insertNews($news){
 
 //Recupere tous les themes
 function getTheme(){
+    $table = null;
     $pdo = creeConnexion();
     $statement = $pdo->prepare("SELECT * FROM Theme;");
     $statement->execute();

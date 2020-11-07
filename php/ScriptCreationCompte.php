@@ -60,11 +60,4 @@ function testSession() {
     }
 }
 
-function testBoutonDeco() {
-    if (isset($_SESSION['login']) && isset($_SESSION['pass'])){
-        echo '<a href="authentification.php" class="souligne elmtMenu">Deconnexion</a>';
-    } else {
-        echo '<a href="authentification.php" class="souligne elmtMenu">Connexion</a>';
-    }
-}
 ?>
