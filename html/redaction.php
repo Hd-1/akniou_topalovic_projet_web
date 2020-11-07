@@ -54,7 +54,7 @@
     </div>
     <div id="sectionArticle">
         <h1 id="titreVosArticlesRedac">Vos Articles</h1>
-        <?php afficheNews(); ?>
+        <?php afficheNewsRedacteur();?>
     </div>
     </body>
 <footer>

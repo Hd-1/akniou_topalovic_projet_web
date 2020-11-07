@@ -19,7 +19,7 @@ function creeConnexion(){
 
 //Verifie si les identifiants inséré sont dans la bdd pour authentifier le redacteur
 function testAuthentification($authentification){
-    $nbLigne = null;
+    $nbLigne = 0;
     $pdo = creeConnexion();
     $email = $authentification->getEmail();
     $motDePasse = $authentification->getMotDePasse();
@@ -28,23 +28,23 @@ function testAuthentification($authentification){
     while($row = $statement->fetch(PDO::FETCH_ASSOC)){
         $nbLigne = $row['nbLigne'];
     }
-    if($nbLigne != null){
-        return true;
-    } else {
+    if($nbLigne == 0){
         return false;
+    } else {
+        return true;
     }
 }
 
 //Test si un comtpe est deja existant
 function compteExistant($email){
-    $nbLigne = null;
+    $nbLigne = 0;
     $pdo = creeConnexion();
     $statement = $pdo->prepare("SELECT COUNT(*) AS nbLigne FROM Redacteur WHERE adressemail=?;");
     $statement->execute([$email]);
     while($row = $statement->fetch(PDO::FETCH_ASSOC)){
         $nbLigne = $row['nbLigne'];
     }
-    if($nbLigne != null){
+    if($nbLigne == 0){
         return true;
     } else {
         return false;
@@ -135,7 +135,7 @@ function getTheme(){
 function getNews(){
     $table = null;
     $pdo = creeConnexion();
-    $statement = $pdo->prepare("SELECT * FROM News ;");
+    $statement = $pdo->prepare("SELECT * FROM News ORDER BY datenews DESC;");
     $statement->execute();
     while($row = $statement->fetch(PDO::FETCH_ASSOC)){
         $idnews = $row['idnews'];
@@ -185,6 +185,28 @@ function getNewsById($idnews){
     $pdo = creeConnexion();
     $statement = $pdo->prepare("SELECT * FROM News WHERE idnews = ?;");
     $statement->execute([$idnews]);
+    while($row = $statement->fetch(PDO::FETCH_ASSOC)){
+        $idnews = $row['idnews'];
+        $idtheme = $row['idtheme'];
+        $titrenews = $row['titrenews'];
+        $datenews = $row['datenews'];
+        $textenews = $row['textenews'];
+        $idredacteur = $row['idredacteur'];
+        $news = new News($idnews,$idtheme, $titrenews, $datenews, $textenews, $idredacteur);
+    }
+    if($news != null){
+        return $news;
+    } else {
+        return null;
+    }
+}
+
+//Recupere les news d'un redacteur donné
+function getNewsByIdRedacteur($idredacteur){
+    $news = null;
+    $pdo = creeConnexion();
+    $statement = $pdo->prepare("SELECT * FROM News WHERE idredacteur = ?;");
+    $statement->execute([$idredacteur]);
     while($row = $statement->fetch(PDO::FETCH_ASSOC)){
         $idnews = $row['idnews'];
         $idtheme = $row['idtheme'];

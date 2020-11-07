@@ -1,5 +1,4 @@
 <?php
-
 include_once('requetesSQL.php');
 include_once('ScriptTheme.php');
 include_once('ScriptNews.php');

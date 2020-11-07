@@ -197,6 +197,40 @@ function afficheNewsAccueil(){
     }
 }
 
+function afficheNewsRedacteur(){
+    try{
+        if(isset($_SESSION['login'])){
+            $idredacteur = getIdRedacteurByEmail($_SESSION['login']);
+            $table = getNewsByIdRedacteur($idredacteur);
+            
+            if($table != null){
+                foreach($table as $news){
+                    var_dump($news);
+                    $idnews = $news->getIdnews();
+                    $titrenews = $news->getTitrenews();
+                    $datenews = $news->getDatenews();
+                    $redacteur = getRedacteurById($idredacteur);
+                    $nom = $redacteur->getNom();
+                    $prenom = $redacteur->getPrenom();
+                    $textenews = $news->getTextenews();
+                    echo "
+                        <div class='articleNews marginCotesAuto' id=".$idnews.">
+                            <h1>".$titrenews."</h1>
+                            <h2>Par: ".$nom." ".$prenom." - ".$datenews."</h2>
+                            <p>".$textenews."</p>
+                        <div class='footerArticle'>
+                            <p id='idNewsFooter'> News n°".$idnews."</p>
+                        </div>
+                        </div>
+                    ";
+                }
+            }
+        }
+    } catch(Exception $e) {
+        echo '<script type="text/javascript"> alert("'.$e->getMessage().'");</script>';
+    }
+}
+
 function boutonAdmin(){
     if(isset($_SESSION['login'])){
         $email = $_SESSION['login'];
