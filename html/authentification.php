@@ -55,6 +55,8 @@
             <a href="creationCompte.php" class="souligne" id="btnCompte">Créer un compte</a>
         </p>
     </div>
+    </div>
+    </div>
 </body>
 <footer>
     <a href="accueil.php" class="souligne">Accueil</a><br/>

@@ -59,7 +59,7 @@
             </div>
             <div class="divColElt">
                 <button type="submit" class="bouton" name="valider"><span>S'incrire</span></button>
-            <div>
+        </div>
         </div>
     </form>
     <p>
