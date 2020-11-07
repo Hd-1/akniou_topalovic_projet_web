@@ -67,5 +67,11 @@
     </p>
 </div>
 </body>
-
+<footer>
+    <a href="accueil.php" class="souligne">Accueil</a><br/>
+    <a href="news.php" class="souligne">News</a><br/>
+    <a href="redaction.php" class="souligne ">Rédiger une news</a><br/>
+    <a href="contact.php" class="souligne">Contacts</a><br/>
+    <p>HK Corp. ®</p>
+</footer>
 </html>
