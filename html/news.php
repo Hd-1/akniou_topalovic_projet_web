@@ -8,9 +8,6 @@
     <?php 
         session_start();
         include_once('../php/ScriptNews.php');
-        if(isset($_POST['admin'])){
-            header("Location:http://localhost/projet/akniou_topalovic_projet_web/html/admin.php");
-        }
     ?>
 </head>
 <header>

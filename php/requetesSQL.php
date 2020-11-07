@@ -172,6 +172,7 @@ function deleteNews($idnews){
 
 //Recupere une news grace a un id
 function getNewsById($idnews){
+    $news = null;
     $pdo = creeConnexion();
     $statement = $pdo->prepare("SELECT * FROM News WHERE idnews = ?;");
     $statement->execute([$idnews]);
@@ -184,7 +185,11 @@ function getNewsById($idnews){
         $idredacteur = $row['idredacteur'];
         $news = new News($idnews,$idtheme, $titrenews, $datenews, $textenews, $idredacteur);
     }
-    return $news;
+    if($news != null){
+        return $news;
+    } else {
+        return null;
+    }
 }
 
 //Modifie une news

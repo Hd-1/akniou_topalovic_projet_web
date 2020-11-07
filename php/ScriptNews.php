@@ -201,7 +201,7 @@ function boutonAdmin(){
         $email = $_SESSION['login'];
         if($email == "admin@admin.com"){
             echo'
-                <div id="divAdmin"><button type="submit" class="bouton" name="admin" href="admin.php"><span>Admin</span></button></div>
+                <div id="divAdmin"><a href="admin.php"><button type="submit" class="bouton" name="admin"><span>Admin</span></button></a></div>
             ';
         }
     }

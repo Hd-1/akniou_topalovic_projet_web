@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <?php
         session_start();
+        include_once('../php/requetesSQL.php');
         include_once('../php/ScriptAdmin.php');
         testAdmin();
         if(isset($_POST['supprimer'])){
@@ -18,9 +19,12 @@
         }
         if(isset($_POST['modifier'])){
             if(isset($_POST['idnews'])){
-                $news = getNewsById($_POST['idnews']);
-                $_SESSION['news'] = $news;
-                header("Location:http://localhost/projet/akniou_topalovic_projet_web/html/modificationNews.php");
+                $idnews = $_POST['idnews'];
+                $news = getNewsById($idnews);
+                if($news != null){
+                    $_SESSION['idnews'] = $idnews;
+                    header("Location:http://localhost/projet/akniou_topalovic_projet_web/html/modificationNews.php");
+                }
             }
         }
     ?>

@@ -7,17 +7,15 @@
     <?php
         session_start();
         include_once('../php/ScriptModificationNews.php');
+        include_once('../php/ScriptAdmin.php');
         testAdmin();
-        $news = $_SESSION['news'];
-        $idnews = $news->getIdnews();
+        $idnews = $_SESSION['idnews'];
+        $news = getNewsById($idnews);
         $idtheme = $news->getIdtheme();
         $titrenews = $news->getTitrenews();
         $datenews = $news->getDatenews();
         $textenews = $news->getTextenews();
         $idredacteur = $news->getIdredacteur();
-        $_POST['titre'] = $titre;
-        //$_POST['theme'] = $idtheme;
-        $_POST['textenews'] = $textenews;
         if(isset($_POST['valider'])){
             $idtheme = $_POST['theme'];
             $titrenews = $_POST['titre'];
