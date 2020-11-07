@@ -8,6 +8,34 @@
     <?php 
         session_start();
         include_once('../php/ScriptNews.php');
+        if(isset($_POST['rechercher'])){
+        }
+
+        function filtre(){
+            $table = null;
+            if(isset($_POST['rechTitre'])){
+                $titrenews = $_POST['rechTitre'];
+                $table = filtreTitre($titrenews);
+            } elseif(isset($_POST['date1']) && isset($_POST['date2'])) {
+                $dateDeb = $_POST['date1'];
+                $dateFin = $_POST['date2'];
+                $table = filtreDuree($dateDeb, $dateFin);
+            } elseif(isset($_POST['date1'])) {
+                $dateDeb = $_POST['date1'];
+                $table = filtreDateDeb($dateDeb);
+            } elseif(isset($_POST['date2'])) {
+                $dateFin = $_POST['date2'];
+                $table = filtreDateFin($dateFin);
+            } elseif(isset($_POST['rechTheme'])){
+                $idtheme = $_POST['rechTheme'];
+                $table = filtreTheme($idtheme);
+            }
+            $_SESSION['filtre'] = $table;
+        }
+        if(!isset($_SESSION['filtre'])){
+            filtre();
+        }
+        
     ?>
 </head>
 <header>
@@ -27,7 +55,7 @@
     <div class="divFlexCol recherche">
         <div class="divFlexRow divColElt" id="divNomPrenom">
             <form method="post">
-                <input type="text" name="recherche" placeholder="Recherche dans le titre..." id="recherche" size="45" >
+                <input type="text" name="rechTitre" placeholder="Recherche dans le titre..." id="recherche" size="45" >
                 <br/><br/>
                <input type="text" placeholder="Date début" value="" name="date1" id="champ_date1" size="12" maxlength="10">
                 <div id="calendarMain1"></div>
@@ -40,13 +68,13 @@
                         calInit("calendarMain2", "", "champ_date2", "jsCalendar", "day", "selectedDay");
                     </script>
                 <br/>
-               <select name="theme" id="themeChoisi">
+               <select name="rechTheme" id="themeChoisi">
                     <option value="">--Choisir un thème--</option>
                     <?php affichageTheme(); ?>
                 </select>
                 <br/>
-                <button class="bouton" type="submit" name="Rechercher" onsubmit=""><span>Rechercher</span></button>
+                <input type='submit' class="bouton" type="submit" name="rechercher"><span>Rechercher</span></button>
             </form>
         </div>
     </div>
-        <?php afficheNews(); ?>
+    <?php afficheNews($_SESSION['filtre']); ?>
