@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Creation de compte</title>
+    <title>Création de compte</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <script language="javascript" type="text/javascript" src="../javascript/ScriptCreationCompte.js"></script>
     <?php
@@ -57,12 +57,12 @@
                 <td colspan="2"><input type="password" name="confirmationMotDePasse" placeholder="Confirmer le mot de passe" size=26px></td>
             </div>
             <div class="divColElt">
-                <td><input type="submit" name="valider" value="S'incrire"></td>
+                <button type="submit" class="bouton" name="valider"><span>S'incrire</span></button>
             <div>
         </div>
     </form>
     <p>
-        Déjà inscrit? <a href="authentification.php">S'identifier</a>.
+        Déjà inscrit? <a href="authentification.php" class="souligne" id="btnCompte">S'identifier</a>.
     </p>
 </div>
 </body>

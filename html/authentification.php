@@ -45,13 +45,13 @@
                 <input type="password" name="motDePasse" placeholder="Mot de passe">
             </div>
             <div class="divColElt">
-                <input type="submit" name="valider" value="Se connecter" onsubmit="return valider()">
+                <button type="submit" class="bouton" name="valider" onsubmit="return valider()"><span>Se connecter</span></button>
             </div>
         </div>
         </form>
         <p>
             Nouveau sur HKNews? <br>
-            <a href="creationCompte.php">Creer un compte</a>
+            <a href="creationCompte.php" class="souligne" id="btnCompte">Créer un compte</a>
         </p>
     </div>
 </body>
