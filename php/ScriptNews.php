@@ -154,6 +154,7 @@ function afficheNews(){
                         <h2>Par: ".$nom." ".$prenom." - ".$datenews."</h2>
                         <p>".$textenews."</p>
                     <div class='footerArticle'>
+                        <p id='idNewsFooter'> News n°".$idnews."</p>
                         <a class='souligne btnEnSavoirPlus' href='###'>en savoir plus...</a>
                     </div>
                     </div>
@@ -178,24 +179,24 @@ function afficheNewsAccueil(){
                 $nom = $redacteur->getNom();
                 $prenom = $redacteur->getPrenom();
                 $textenews = $news->getTextenews();
-                for($i=0;$i<6;$i++){
                 echo "
                     <div class='articleNews marginCotesAuto' id=".$idnews.">
                         <h1>".$titrenews."</h1>
                         <h2>Par: ".$nom." ".$prenom." - ".$datenews."</h2>
                         <p>".$textenews."</p>
                     <div class='footerArticle'>
+                        <p id='idNewsFooter'> News n°".$idnews."</p>
                         <a class='souligne btnEnSavoirPlus' href='###'>en savoir plus...</a>
                     </div>
                     </div>
                 ";
-            }
             }
         }
     } catch(Exception $e) {
         echo '<script type="text/javascript"> alert("'.$e->getMessage().'");</script>';
     }
 }
+
 function boutonAdmin(){
     if(isset($_SESSION['login'])){
         $email = $_SESSION['login'];

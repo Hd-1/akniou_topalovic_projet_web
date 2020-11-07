@@ -37,23 +37,23 @@
 			<li><a href="news.php" class="souligne elmtMenu">News</a></li>
 			<li><a href="redaction.php" class="souligne elmtMenu">Rédiger une news</a></li>
             <li><a href="contact.php" class="souligne elmtMenu">Contact</a></li>
-            <li id="boutonDeco"><a href="authentification.php" class="souligne elmtMenu" id="pageActuelle">Deconnexion</a></li>
+            <li id="boutonDeco"><a href="authentification.php" class="souligne elmtMenu">Deconnexion</a></li>
         </ul>
 	</nav>
 </header>
 <body class="centre noMargin">
     <p>
-        Panneau administration<br>
+        Panneau d'administration<br>
     </p>
     <div class="blackBorder bgWhite" id="divDeco">
         <form method="post">
-        <div class="divFlexCol">
+        <div class="divFlexCol" id="divPanoAdmin">
             <div>
                 <input type="text" name="idnews" placeholder="ID News">
             </div>
             <div class="divColElt">
-                <input type="submit" name="supprimer" value="Supprimer">
-                <input type="submit" name="modifier" value="Modifier">
+                <button type="submit" class="bouton" name="supprimer" onsubmit="return valider()"><span>Supprimer</span></button>
+                <button type="submit" class="bouton" name="modifier" onsubmit="return valider()"><span>Modifier</span></button>
             </div>
         </div>
         </form>

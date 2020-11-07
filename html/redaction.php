@@ -32,7 +32,7 @@
 </header>
 <body>
     <div id="divRedaction">
-        <h1>Redaction</h1>
+        <p class="marginCotesAuto" id="titreRedac">Redaction</h1>
     <form method="post">
             <div class="divFlexRow divColElt" id="divNomPrenom">
                 <div class="divRowElt">

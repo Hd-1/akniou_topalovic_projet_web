@@ -154,19 +154,22 @@ body{
 	border: #2673cb solid 1px;
 }
 
-#divRedaction h1{
-	background-color: wheat;
-	padding: 5px 10px 5px ;
-	width: 180px;
-	margin: 25px;
-	margin-left: 36%;
-	border: #2e373f solid 2px;
+#titreRedac{
+	font-weight: bold;
+	text-align: center;
+	font-size: 32px;
+	width: 200px;
+	border: black solid 2px;
+	border-radius: 50px;
 }
 
 #divRedaction select{
 	width: 200px;
 	margin-left: 15%;
 	margin-bottom: 5px;
+}
+#divRedaction button{
+	margin-left: 840px;
 }
 
 .nbrCaractereTitre{
@@ -211,9 +214,9 @@ body{
 
 .articleNews{
 	background-color: rgba(247, 223, 211, 1);
-	max-width: 40%;
+	max-width: 1000px;
 	max-height: 800px;
-	width: 40%;
+	width: 1000px;
 	border: 1px black solid;
 	margin: 2% 5% 2% 5%;
 	text-align: justify;
@@ -256,6 +259,14 @@ body{
 	padding-bottom: 10px;
 	background-color: wheat;
 	border: #2e373f solid 1px;
+}
+
+#idNewsFooter{
+	margin-top: 10px;
+	padding: 0;
+	text-align: left;
+	height: 24px;
+	position: absolute;
 }
 
 /*===========================================================
@@ -380,6 +391,7 @@ body{
 
 .contactStyle legend{
 	border: black solid 1px;
+	border-radius: 50px;
 	padding: 5px;
 }
 
@@ -417,10 +429,12 @@ body{
 #divAuth input[type=text]{
 	margin-top: 5px;
 	margin-bottom: 5px;
+	height: 30px;
 }
 
 #divAuth input[type=password]{
 	margin: 5px;
+	height: 30px;
 }
 
 #btnCompte{
@@ -437,6 +451,27 @@ body{
 	padding-bottom: 15px;
 }
 
+/*===========================================================
+                        	Admin
+===========================================================*/
+
+#divPanoAdmin input[type=text]{
+	margin-top: 15px;
+	margin-bottom: 5px;
+}
+
+#divPanoAdmin{
+	margin: 0;
+}
+
+#modifNews{
+	font-weight: bold;
+	text-align: center;
+	font-size: 32px;
+	width: 250px;
+	border: black solid 2px;
+	border-radius: 50px;
+}
 /*########################################################################
 ==========================================================================
                             	GENERAL
