@@ -164,4 +164,35 @@ function afficheNews(){
         echo '<script type="text/javascript"> alert("'.$e->getMessage().'");</script>';
     }
 }
-?>
+
+function afficheNewsAccueil(){
+    try{
+        $table = getNews();
+        if($table != null){
+            foreach($table as $news){
+                $idnews = $news->getIdnews();
+                $titrenews = $news->getTitrenews();
+                $datenews = $news->getDatenews();
+                $idredacteur = $news->getIdredacteur();
+                $redacteur = getRedacteurById($idredacteur);
+                $nom = $redacteur->getNom();
+                $prenom = $redacteur->getPrenom();
+                $textenews = $news->getTextenews();
+                for($i=0;$i<6;$i++){
+                echo "
+                    <article class='articleNews' id=".$idnews.">
+                        <h1>".$titrenews."</h1>
+                        <h2>Par: ".$nom." ".$prenom." - ".$datenews."</h2>
+                        <p>".$textenews."</p>
+                    <footer class='footerArticle'>
+                        <a class='souligne btnEnSavoirPlus' href='###'>en savoir plus...</a>
+                    </footer>
+                    </article>
+                ";
+            }
+            }
+        }
+    } catch(Exception $e) {
+        echo '<script type="text/javascript"> alert("'.$e->getMessage().'");</script>';
+    }
+}

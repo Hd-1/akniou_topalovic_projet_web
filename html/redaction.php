@@ -41,7 +41,7 @@
                         <?php affichageTheme(); ?>
                     </select>
                     <input type='text' name='titre' placeholder="Titre" size=50px maxlength="300" onkeyup="resteTitre(this.value);"><br/>
-                    <span id="caracteresTitre">300</span> caractères restants
+                    <p class="nbrCaractereTitre"><span id="caracteresTitre" >300</span> caractères restants</p>
                     <br/><br/>
                     <textarea name="textenews"rows="40" cols="100" placeholder="Ecrire l'article..." maxlength="5000" onkeyup="resteRedaction(this.value);"></textarea><br/>
                     <span id="caracteresRedaction">5000</span> caractères restants

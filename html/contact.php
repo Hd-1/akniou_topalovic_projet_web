@@ -8,10 +8,14 @@
     <?php
     session_start();
     include_once('../php/ScriptContact.php');
-    if(isset($_POST["envoi"]))
+    if(isset($_POST["envoi"])){
+        envoiMail();
+    }
         if(isset($_POST['valider'])){
             authentification($_POST['email'], $_POST['motDePasse']);
-        }?>
+        }
+        
+        ?>
 </head>
 <header>
     <h1 id="titre"><a href='accueil.php'>HK News</a></h1>

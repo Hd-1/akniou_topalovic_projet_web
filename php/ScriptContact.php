@@ -1,7 +1,7 @@
 <?php
 
 include_once('requetesSQL.php');
-
+function envoiMail(){
 // expéditeur du dormulaire. Pour des raisons de sécurité, de plus en plus d'hébergeurs imposent que ce soit une adresse sur votre hébergement/nom de domaine.
 // Par exemple si vous mettez ce script sur votre site "test-site.com", mettez votre email @test-site.com comme expéditeur (par exemple contact@test-site.com)
 // Si vous ne changez pas cette variable, vous risquez de ne pas recevoir de formulaire.
@@ -9,7 +9,7 @@ $email_expediteur = 'moi@monsite.com';
 $nom_expediteur = 'Contact Monsite.com';
  
 // destinataire est votre adresse mail (cela peut être la même que cl'expéditeur ci-dessus). Pour envoyer à plusieurs destinataires à la fois, séparez-les par un point-virgule
-$destinataire = 'moi@moi.tld';
+$destinataire = 'mehdiakniou@gmail.com ';
  
 // copie ? (envoie une copie au visiteur)
 $copie = 'oui'; // 'oui' ou 'non'
@@ -19,10 +19,11 @@ $message_envoye = "Votre message nous est bien parvenu !";
 $message_non_envoye = "L'envoi du mail a échoué, veuillez réessayer SVP.";
  
 // Messages d'erreur du formulaire
-$message_erreur_formulaire = "Vous devez d'abord <a href=\"contact.php\">envoyer le formulaire</a>.";
+$message_erreur_formulaire = "Vous devez d'abord";
 $message_formulaire_invalide = "Vérifiez que tous les champs soient bien remplis et que l'email soit sans erreur.";
 
 // on teste si le formulaire a été soumis
+
 if (!isset($_POST['envoi']))
 {
 	// formulaire non envoyé
@@ -110,7 +111,7 @@ else
 	else
 	{
 		// une des 3 variables (ou plus) est vide ...
-		echo '<p>'.$message_formulaire_invalide.' <a href="contact.php">Retour au formulaire</a></p>'."\n";
+		echo '<p>'.$message_formulaire_invalide."\n";
 	};
 }; // fin du if (!isset($_POST['envoi']))
-?>
+}

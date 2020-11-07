@@ -7,6 +7,7 @@
     <?php
         session_start();
         include_once('../php/ScriptAccueil.php');
+        include_once('../php/ScriptNews.php');
     ?>
 </head>
 <header>
@@ -30,17 +31,6 @@
         <img id="image2" src="./images/2.png" />
         <img id="image3" src="./images/3.png" />
     </article>
-    <article class="articleNews">
-        <h1>Ceci est le titre de l'article</h1>
-        <h2>Ceci est la date et l'auteur de l'article</h2>
-        <p>Ceci est le contenu de l'article</p>
-        <a class="souligne btnEnSavoirPlus" href="###">en savoir plus...</a>
-    </article>
-    
-    <article class="articleNews">
-        <h1>Ceci est le titre de l'article</h1>
-        <h2>Ceci est la date et l'auteur de l'article</h2>
-        <p>Ceci est le contenu de l'article</p>
-        <a class="souligne btnEnSavoirPlus" href="###">en savoir plus...</a>
-    </article>
+        <?php afficheNewsAccueil(); ?>
+    </section>
 </section>
