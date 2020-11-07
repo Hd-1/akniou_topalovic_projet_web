@@ -260,53 +260,17 @@ body{
 ===========================================================*/
 .recherche{
 	background-color: rgba(255, 245, 155, 1);
-	width: 100%;
+	width: 1000px;
 	margin-top: 50px;
 	margin-left: auto;
 	margin-right: auto;
-	border-top: #2e373f solid 2px;
-	border-bottom: #2e373f solid 2px;
+	border: #2e373f solid 2px;
 	padding: 20px;
 }
 
 .recherche select{
 	width: 200px;
 }
-
-.bouton{
-	border-radius: 4px;
-	background-color: #f4511e;
-	border: none;
-	color: #FFFFFF;
-	text-align: center;
-	font-size: 16px;
-	padding: 11px;
-	width: 150px;
-	transition: all 0.5s;
-	cursor: pointer;
-	margin: 5px;
-}
-.bouton span{
-	cursor: pointer;
-  	display: inline-block;
-  	position: relative;
-  	transition: 0.5s;
-  }
-  .bouton span:after{
-	content: '\00bb';
-	position: absolute;
-	opacity: 0;
-	top: 0;
-	right: -20px;
-	transition: 0.5s;
-  }
-  .bouton:hover span {
-	padding-right: 25px;
-  }
-  .bouton:hover span:after {
-	opacity: 1;
-	right: 0;
-  }
 
 /*===========================================================
                         	Calendrier
@@ -406,6 +370,9 @@ body{
 	background-color: wheat;
 	border: #2e373f solid 1px;
 	margin-top: 50px;
+	margin-right: auto;
+	margin-left: auto;
+	width: 1000px;
 }
 
 .contactStyle legend{
@@ -417,11 +384,15 @@ body{
 	margin: 20px;
 	padding: 20px;
 	width: 500px;
-	margin-left: 35%;
+	margin:auto;
+	margin-top: 25px;
+	margin-bottom: 25px;
 }
 
 .contactStyle button{
-	margin-left: 870px;
+	display: block;
+	margin: auto;
+	margin-bottom: 20px;
 }
 /*===========================================================
                         Authentification
@@ -479,3 +450,39 @@ body{
 .noMargin{
 	margin: 0;
 }
+
+
+.bouton{
+	border-radius: 4px;
+	background-color: #f4511e;
+	border: none;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 16px;
+	padding: 11px;
+	width: 150px;
+	transition: all 0.5s;
+	cursor: pointer;
+	margin: 5px;
+}
+.bouton span{
+	cursor: pointer;
+  	display: inline-block;
+  	position: relative;
+  	transition: 0.5s;
+  }
+  .bouton span:after{
+	content: '\00bb';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+  }
+  .bouton:hover span {
+	padding-right: 25px;
+  }
+  .bouton:hover span:after {
+	opacity: 1;
+	right: 0;
+  }
