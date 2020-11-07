@@ -16,26 +16,27 @@
             if(isset($_POST['rechTitre'])){
                 $titrenews = $_POST['rechTitre'];
                 $table = filtreTitre($titrenews);
-            } elseif(isset($_POST['date1']) && isset($_POST['date2'])) {
+            } else if(isset($_POST['date1']) && isset($_POST['date2'])) {
                 $dateDeb = $_POST['date1'];
                 $dateFin = $_POST['date2'];
                 $table = filtreDuree($dateDeb, $dateFin);
-            } elseif(isset($_POST['date1'])) {
+            } else if(isset($_POST['date1'])) {
                 $dateDeb = $_POST['date1'];
                 $table = filtreDateDeb($dateDeb);
-            } elseif(isset($_POST['date2'])) {
+            } else if(isset($_POST['date2'])) {
                 $dateFin = $_POST['date2'];
                 $table = filtreDateFin($dateFin);
-            } elseif(isset($_POST['rechTheme'])){
+            } else if(isset($_POST['rechTheme'])){
                 $idtheme = $_POST['rechTheme'];
+                var_dump($idtheme);
+                var_dump($_POST['rechTheme']);
                 $table = filtreTheme($idtheme);
             }
             $_SESSION['filtre'] = $table;
         }
-        if(!isset($_SESSION['filtre'])){
+        if(isset($_POST['rechercher'])){
             filtre();
         }
-        
     ?>
 </head>
 <header>
@@ -73,7 +74,7 @@
                     <?php affichageTheme(); ?>
                 </select>
                 <br/>
-                <input type='submit' class="bouton" type="submit" name="rechercher"><span>Rechercher</span></button>
+                <button type='submit' class="bouton" type="submit" name="rechercher"><span>Rechercher</span></button>
             </form>
         </div>
     </div>
