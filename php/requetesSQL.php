@@ -19,39 +19,35 @@ function creeConnexion(){
 
 //Verifie si les identifiants inséré sont dans la bdd pour authentifier le redacteur
 function testAuthentification($authentification){
-    try {
-        $pdo = creeConnexion();
-        $email = $authentification->getEmail();
-        $motDePasse = $authentification->getMotDePasse();
-        $statement = $pdo->prepare("SELECT COUNT(*) AS nbLigne FROM topalovi1u_projetweb.Redacteur WHERE adressemail=? AND motdepasse = ?;");
-        $statement->execute([$email, $motDePasse]);
-        $nbLigne = 0;
-        while($row = $statement->fetch(PDO::FETCH_ASSOC)){
-            $nbLigne = $row['nbLigne'];
-        }
-        if($nbLigne == 0){
-            return false;
-        } else {
-            return true;
-        }
-    } catch(Exception $e) {
-        die($e->getMessage());
+    $nbLigne = null;
+    $pdo = creeConnexion();
+    $email = $authentification->getEmail();
+    $motDePasse = $authentification->getMotDePasse();
+    $statement = $pdo->prepare("SELECT COUNT(*) AS nbLigne FROM topalovi1u_projetweb.Redacteur WHERE adressemail=? AND motdepasse = ?;");
+    $statement->execute([$email, $motDePasse]);
+    while($row = $statement->fetch(PDO::FETCH_ASSOC)){
+        $nbLigne = $row['nbLigne'];
+    }
+    if($nbLigne != null){
+        return true;
+    } else {
+        return false;
     }
 }
 
 //Test si un comtpe est deja existant
 function compteExistant($email){
+    $nbLigne = null;
     $pdo = creeConnexion();
     $statement = $pdo->prepare("SELECT COUNT(*) AS nbLigne FROM Redacteur WHERE adressemail=?;");
     $statement->execute([$email]);
-    $nbLigne = 0;
     while($row = $statement->fetch(PDO::FETCH_ASSOC)){
         $nbLigne = $row['nbLigne'];
     }
-    if($nbLigne == 0){
-        return false;
-    } else {
+    if($nbLigne != null){
         return true;
+    } else {
+        return false;
     }
 }
 
@@ -68,17 +64,22 @@ function insertCompte($compte){
 
 //Recupere l'id d'un redacteur grace a son email
 function getIdRedacteurByEmail($email){
-    $id = 0;
+    $id = null;
     $pdo = creeConnexion();
     $statement = $pdo->prepare("SELECT idredacteur FROM Redacteur WHERE adressemail=?;");
     $statement->execute([$email]);
     while($row = $statement->fetch(PDO::FETCH_ASSOC)){
         $id = $row['idredacteur'];
     }
-    return $id;
+    if($id != null){
+        return $id;
+    } else {
+        return null;
+    }
 }
 
 function getRedacteurById($idredacteur){
+    $redacteur = null;
     $pdo = creeConnexion();
     $statement = $pdo->prepare("SELECT * FROM Redacteur WHERE idredacteur=?;");
     $statement->execute([$idredacteur]);
@@ -90,7 +91,11 @@ function getRedacteurById($idredacteur){
         $motDePasse = $row['motdepasse'];
         $redacteur = new Redacteur($idredacteur, $nom, $prenom, $adressemail, $motDePasse);
     }
-    return $redacteur;
+    if($redacteur != null){
+        return $redacteur;
+    } else {
+        return null;
+    }
 }
 
 /*###############################################   News   ###############################################*/
@@ -124,7 +129,6 @@ function getTheme(){
     } else {
         return null;
     }
-    
 }
 
 //Recupere tous les news
@@ -152,6 +156,7 @@ function getNews(){
 
 //Retourne le theme à partir de son id
 function getThemeById($idTheme){
+    $theme = null;
     $pdo = creeConnexion();
     $statement = $pdo->prepare("SELECT * FROM Theme WHERE idtheme = ?;");
     $statement->execute([$idTheme]);
@@ -160,7 +165,11 @@ function getThemeById($idTheme){
         $description = $row['description'];
         $theme = new Theme($idtheme, $description);
     }
-    return $theme;
+    if($theme != null){
+        return $theme;
+    } else {
+        return null;
+    }
 }
 
 //Supprime une news grace a l'id
